@@ -27,4 +27,4 @@ languages:
         - {name: '关于', link: '/zh/about'}
     title: phphe的博客
     weight: 2
-# TODO prev and next link
+# TODO prev and next link, sitemap
