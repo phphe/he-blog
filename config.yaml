@@ -1,0 +1,30 @@
+DefaultContentLanguage: en
+baseURL: https://phphe.com
+theme: yingyang
+# theme: ananke
+author:
+  name: phphe
+  homepage: https://phphe.com
+markup:
+  highlight:
+    style: friendly
+languages:
+  en:
+    languageName: English
+    contentDir: content/en
+    params:
+      footerMenu:
+        - {name: 'Projects', link: '/posts/my-projects'}
+        - {name: 'About', link: '/about'}
+    title: He's Blog
+    weight: 1
+  zh:
+    languageName: 中文
+    contentDir: content/zh
+    params:
+      footerMenu:
+        - {name: '我的项目', link: '/zh/posts/my-projects'}
+        - {name: '关于', link: '/zh/about'}
+    title: phphe的博客
+    weight: 2
+# TODO prev and next link
