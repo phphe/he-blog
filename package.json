@@ -1,0 +1,75 @@
+{
+  "name": "he-blog",
+  "version": "0.0.0",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "serve": "vite preview",
+    "api": "nodemon api/api.js",
+    "cmd-generator-build-watch": "tsc --project  ./src/content/cmd-generators --watch",
+    "lint:script": "eslint --ext .ts,vue --ignore-path .gitignore .",
+    "lint:style": "stylelint src/**/*.{css,scss,vue}"
+  },
+  "dependencies": {
+    "@tailwindcss/forms": "^0.3.2",
+    "@tailwindcss/typography": "^0.4.0",
+    "axios": "^0.21.1",
+    "cheerio": "^1.0.0-rc.6",
+    "dayjs": "^1.10.4",
+    "gitalk": "^1.7.2",
+    "helper-js": "^2.0.3",
+    "html-minifier": "^4.0.0",
+    "http-graceful-shutdown": "^3.0.2",
+    "koa": "^2.13.1",
+    "koa-router": "^10.0.0",
+    "koa2-cors": "^2.0.6",
+    "marked": "^2.0.3",
+    "nightmare": "^3.0.2",
+    "terser": "^5.7.0",
+    "vue": "^3.0.5",
+    "vue-functions": "^2.0.6",
+    "vue-gtag": "^2.0.1",
+    "vue-i18n": "^9.1.6",
+    "vue-router": "^4.0.6",
+    "yaml": "^1.10.2"
+  },
+  "devDependencies": {
+    "@types/koa": "^2.13.1",
+    "@typescript-eslint/eslint-plugin": "^4.22.0",
+    "@typescript-eslint/parser": "^4.22.0",
+    "@vitejs/plugin-legacy": "^1.4.1",
+    "@vitejs/plugin-vue": "^1.2.1",
+    "@vitejs/plugin-vue-jsx": "^1.1.3",
+    "@vue/compiler-sfc": "^3.0.5",
+    "@vue/eslint-config-prettier": "^6.0.0",
+    "@vue/eslint-config-typescript": "^7.0.0",
+    "autoprefixer": "^10.2.5",
+    "eslint": "^7.24.0",
+    "eslint-plugin-prettier": "^3.3.1",
+    "eslint-plugin-vue": "^7.9.0",
+    "husky": "^6.0.0",
+    "lint-staged": "^10.5.4",
+    "nodemon": "^2.0.7",
+    "postcss": "^8.2.9",
+    "prettier": "^2.2.1",
+    "pug": "^3.0.2",
+    "sass": "^1.32.8",
+    "stylelint": "^13.12.0",
+    "stylelint-config-recommended": "^4.0.0",
+    "stylelint-config-standard": "^21.0.0",
+    "tailwindcss": "^2.1.1",
+    "tslib": "^2.2.0",
+    "typescript": "^4.2.4",
+    "vite": "^2.2.3"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "*.{ts,vue}": "eslint --fix",
+    "*.{css,scss,vue}": "stylelint --fix",
+    "*": "prettier -w -u"
+  }
+}
