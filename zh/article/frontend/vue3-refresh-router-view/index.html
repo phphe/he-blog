@@ -1,0 +1,42 @@
+<!DOCTYPE html><html lang="zh"><head>
+    <meta charset="UTF-8">
+    <!-- <link rel="icon" href="/favicon.ico" /> -->
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400&amp;display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <script type="module" crossorigin="" src="/assets/index.0a58b172.js"></script>
+  <link rel="modulepreload" href="/assets/vendor.9d904b36.js">
+  <link rel="stylesheet" href="/assets/index.55ebcceb.css">
+<link href="https://www.googletagmanager.com" rel="preconnect"><script async="" src="https://www.googletagmanager.com/gtag/js?id=G-GG17SFDKPV&amp;l=dataLayer"></script><link rel="alternate" href="http://127.0.0.1:5000/article/frontend/vue3-refresh-router-view" hreflang="en"><link rel="alternate" href="http://127.0.0.1:5000/zh/article/frontend/vue3-refresh-router-view" hreflang="zh"><title>Vue3 刷新 Router View</title><link rel="preload" as="script" crossorigin="" href="/assets/article.0b6d4500.js"><link rel="stylesheet" href="/assets/article.35be2dc5.css"><link rel="preload" as="script" crossorigin="" href="/assets/gitalk_lazyload.2d288441.js"><link rel="stylesheet" href="/assets/gitalk_lazyload.025f1620.css"><script>window.__IS_GENERATED__ = true</script></head>
+  <body>
+    <div id="app" data-v-app=""><div class="default-layout fixed w-full h-full flex"><div class="main-sidebar flex-shrink-0 w-72 h-full overflow-hidden font-title flex flex-col"><!----><div class="flex-grow overflow-auto"><div class="main-title text-2xl text-gray-700 mt-32 ml-16"><!----><span class="">何 He's Blog</span></div><div class="main-menu mt-6 text-gray-600 ml-16"><a href="/zh" class="anchor cursor-pointer main-menu-item no-underline">首页</a><a href="/zh/page/my-works" class="anchor cursor-pointer main-menu-item no-underline">作品</a><a href="/zh/page/about" class="anchor cursor-pointer main-menu-item no-underline">关于</a><div class="popup popup-activator cursor-pointer inline-flex items-center main-menu-item">语言<span class="icon inline-flex items-center caret popup-caret relative transition">​<span class="icon-icon material-icons" style="font-size: 20px;">arrow_drop_down</span></span></div><!----></div></div></div><div class="main-right flex-grow overflow-auto"><div class="px-4 main-body"><div class="article-view"><div class="article mt-14"><div class="article-head"><div class="article-title prose"><h1>Vue3 刷新 Router View</h1></div><div class="article-meta mt-5"><small>18-06 2021</small></div></div><div class="article-body mt-8 text-gray-600 text"><div class="article-content prose"><p>给 router-view 添加 key, 改变 key 时 router-view 将会创建刷新.</p>
+<p>使用 Vue <code>ref</code>创建变量.</p>
+<pre><code class="language-ts">import { ref } from 'vue'
+
+export const routeViewKey = ref(Math.random().toString())
+export const reloadRouteView = () =&gt; {
+  routeViewKey.value = Math.random().toString()
+}
+</code></pre>
+<p>将<code>routeViewKey</code>作为 router-view 的 key.</p>
+<pre><code class="language-html">&lt;router-view :key="routeViewKey"&gt;&lt;/router-view&gt;
+</code></pre>
+<pre><code class="language-ts">import { routeViewKey } from 'yourpath'
+export default {
+  setup() {
+    return { routeViewKey }
+  },
+}
+</code></pre>
+<h2 id="使用">使用</h2>
+<p>调用<code>reloadRouteView</code>即可.</p>
+</div></div><div class="article-foot"></div><div class="gitalk-vue article-comments"><div class="gitalk-vue-async"><div class="gitalk-vue-placeholder"><div class="gt-container"><div class="gt-initing"><i class="gt-loader"></i><p class="gt-initing-text">Gitalk 加载中 ...</p></div></div></div></div></div></div></div></div><div class="py-10 text-center text-sm text-gray-500">Copyright © He's Blog 2021. All rights reserved.</div></div><!----></div><!----></div>
+    
+  
+<script nomodule="">!function(){var e=document,t=e.createElement("script");if(!("noModule"in t)&&"onbeforeload"in t){var n=!1;e.addEventListener("beforeload",(function(e){if(e.target===t)n=!0;else if(!e.target.hasAttribute("nomodule")||!n)return;e.preventDefault()}),!0),t.type="module",t.src=".",e.head.appendChild(t),t.remove()}}();</script>
+  <script nomodule="" src="/assets/polyfills-legacy.3a2fdff1.js"></script>
+  <script nomodule="" id="vite-legacy-entry" data-src="/assets/index-legacy.4c5daddb.js">System.import(document.getElementById('vite-legacy-entry').getAttribute('data-src'))</script>
+
+
+<!----></body></html>

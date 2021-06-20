@@ -1,0 +1,135 @@
+<!DOCTYPE html><html lang="zh"><head>
+    <meta charset="UTF-8">
+    <!-- <link rel="icon" href="/favicon.ico" /> -->
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400&amp;display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <script type="module" crossorigin="" src="/assets/index.0a58b172.js"></script>
+  <link rel="modulepreload" href="/assets/vendor.9d904b36.js">
+  <link rel="stylesheet" href="/assets/index.55ebcceb.css">
+<link href="https://www.googletagmanager.com" rel="preconnect"><script async="" src="https://www.googletagmanager.com/gtag/js?id=G-GG17SFDKPV&amp;l=dataLayer"></script><link rel="alternate" href="http://127.0.0.1:5000/article/frontend/vue3-meta-simple-solution" hreflang="en"><link rel="alternate" href="http://127.0.0.1:5000/zh/article/frontend/vue3-meta-simple-solution" hreflang="zh"><title>一个文件搞定 vue3 meta</title><link rel="preload" as="script" crossorigin="" href="/assets/article.0b6d4500.js"><link rel="stylesheet" href="/assets/article.35be2dc5.css"><script>window.__IS_GENERATED__ = true</script></head>
+  <body>
+    <div id="app" data-v-app=""><div class="default-layout fixed w-full h-full flex"><div class="main-sidebar flex-shrink-0 w-72 h-full overflow-hidden font-title flex flex-col"><!----><div class="flex-grow overflow-auto"><div class="main-title text-2xl text-gray-700 mt-32 ml-16"><!----><span class="">何 He's Blog</span></div><div class="main-menu mt-6 text-gray-600 ml-16"><a href="/zh" class="anchor cursor-pointer main-menu-item no-underline">首页</a><a href="/zh/page/my-works" class="anchor cursor-pointer main-menu-item no-underline">作品</a><a href="/zh/page/about" class="anchor cursor-pointer main-menu-item no-underline">关于</a><div class="popup popup-activator cursor-pointer inline-flex items-center main-menu-item">语言<span class="icon inline-flex items-center caret popup-caret relative transition">​<span class="icon-icon material-icons" style="font-size: 20px;">arrow_drop_down</span></span></div><!----></div></div></div><div class="main-right flex-grow overflow-auto"><div class="px-4 main-body"><div class="article-view"><div class="article mt-14"><div class="article-head"><div class="article-title prose"><h1>一个文件搞定 vue3 meta</h1></div><div class="article-meta mt-5"><small>20-06 2021</small></div></div><div class="article-body mt-8 text-gray-600 text"><div class="article-content prose"><p>可以设置 meta title, description, keywords, author. 与组件同生命周期, 组件卸载时还原. 可以在 composition api 的 setup 里使用, 也可以再 Vue 传统组件写法里的 created, mounted, methods 里使用.</p>
+<h2 id="安装">安装</h2>
+<p>创建<code>HTMLHead.tsx</code></p>
+<pre><code class="language-tsx">import {
+  reactive,
+  onBeforeUnmount,
+  Teleport,
+  getCurrentInstance,
+  ComponentInternalInstance,
+} from 'vue'
+
+const store = reactive({
+  title: '',
+  description: '',
+  keywords: '',
+  author: '',
+})
+
+// try to remove existing elements
+try {
+  for (const sel of [
+    'title',
+    'meta[name="description"]',
+    'meta[name="keywords"]',
+    'meta[name="author"]',
+  ]) {
+    const el = document.head.querySelector(sel)
+    if (el) {
+      el.remove()
+    }
+  }
+} catch (error) {}
+
+export function HTMLHead() {
+  return (
+    &lt;Teleport to="head"&gt;
+      {store.title &amp;&amp; &lt;title&gt;{store.title}&lt;/title&gt;}
+      {store.description &amp;&amp; (
+        &lt;meta name="description" content={store.description} /&gt;
+      )}
+      {store.keywords &amp;&amp; &lt;meta name="keywords" content={store.keywords} /&gt;}
+      {store.author &amp;&amp; &lt;meta name="author" content={store.author} /&gt;}
+    &lt;/Teleport&gt;
+  )
+}
+
+export const useTitle = generateUseFunction('title')
+export const useDescription = generateUseFunction('description')
+export const useKeywords = generateUseFunction('keywords')
+export const useAuthor = generateUseFunction('author')
+
+function generateUseFunction(name: string) {
+  return (value: string, vm?: ComponentInternalInstance) =&gt; {
+    // @ts-ignore
+    store[name] = value
+    const thevm = vm || getCurrentInstance()
+    if (!thevm) {
+      throw new Error(
+        `HTMLHead use ${name}: the second argument is required when called outside of setup`
+      )
+    }
+    onBeforeUnmount(() =&gt; {
+      // @ts-ignore
+      if (store[name] === value) {
+        // @ts-ignore
+        store[name] = ''
+      }
+    }, thevm)
+  }
+}
+</code></pre>
+<p>引入 HTMLHead 组件并附加到根组件中, 如<code>App.vue</code></p>
+<pre><code class="language-vue">&lt;template&gt;
+  &lt;div id="app"&gt;
+    &lt;HTMLHead /&gt;
+  &lt;/div&gt;
+&lt;/template&gt;
+
+&lt;script&gt;
+  import { HTMLHead } from './HTMLHead.tsx'
+  export default {
+    components: {},
+  }
+&lt;/script&gt;
+</code></pre>
+<h2 id="使用">使用</h2>
+<pre><code class="language-ts">import {
+  useTitle,
+  useDescription,
+  useKeywords,
+  useAuthor,
+} from './HTMLHead.tsx'
+</code></pre>
+<p>在 setup 中使用</p>
+<pre><code class="language-ts">setup() {
+  useTitle('title text')
+}
+</code></pre>
+<blockquote>
+<p>:warning: 在异步 setup 及 setup 以外使用需要第二个参数.</p>
+</blockquote>
+<p>在<code>created</code>, <code>mounted</code>, <code>methods</code> 中使用</p>
+<pre><code class="language-ts">created() {
+  useTitle('title text', this)
+}
+</code></pre>
+<p>在 异步 setup 的 await 之后使用</p>
+<pre><code class="language-ts">async setup() {
+  const vm = getCurrentInstance()
+  await something
+  useTitle('title text', vm)
+}
+</code></pre>
+<p>如果你有更好的写法, 请告诉我.</p>
+</div></div><div class="article-foot"></div><div class="gitalk-vue article-comments"><!----></div></div></div></div><div class="py-10 text-center text-sm text-gray-500">Copyright © He's Blog 2021. All rights reserved.</div></div><!----></div><!----></div>
+    
+  
+<script nomodule="">!function(){var e=document,t=e.createElement("script");if(!("noModule"in t)&&"onbeforeload"in t){var n=!1;e.addEventListener("beforeload",(function(e){if(e.target===t)n=!0;else if(!e.target.hasAttribute("nomodule")||!n)return;e.preventDefault()}),!0),t.type="module",t.src=".",e.head.appendChild(t),t.remove()}}();</script>
+  <script nomodule="" src="/assets/polyfills-legacy.3a2fdff1.js"></script>
+  <script nomodule="" id="vite-legacy-entry" data-src="/assets/index-legacy.4c5daddb.js">System.import(document.getElementById('vite-legacy-entry').getAttribute('data-src'))</script>
+
+
+<!----></body></html>

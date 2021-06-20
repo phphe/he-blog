@@ -1,0 +1,135 @@
+<!DOCTYPE html><html lang="en"><head>
+    <meta charset="UTF-8">
+    <!-- <link rel="icon" href="/favicon.ico" /> -->
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400&amp;display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <script type="module" crossorigin="" src="/assets/index.0a58b172.js"></script>
+  <link rel="modulepreload" href="/assets/vendor.9d904b36.js">
+  <link rel="stylesheet" href="/assets/index.55ebcceb.css">
+<link href="https://www.googletagmanager.com" rel="preconnect"><script async="" src="https://www.googletagmanager.com/gtag/js?id=G-GG17SFDKPV&amp;l=dataLayer"></script><link rel="alternate" href="http://127.0.0.1:5000/article/frontend/vue3-meta-simple-solution" hreflang="en"><link rel="alternate" href="http://127.0.0.1:5000/zh/article/frontend/vue3-meta-simple-solution" hreflang="zh"><title>Simple Solution for Vue3 meta</title><link rel="preload" as="script" crossorigin="" href="/assets/article.0b6d4500.js"><link rel="stylesheet" href="/assets/article.35be2dc5.css"><script>window.__IS_GENERATED__ = true</script></head>
+  <body>
+    <div id="app" data-v-app=""><div class="default-layout fixed w-full h-full flex"><div class="main-sidebar flex-shrink-0 w-72 h-full overflow-hidden font-title flex flex-col"><!----><div class="flex-grow overflow-auto"><div class="main-title text-2xl text-gray-700 mt-32 ml-16"><!----><span class="">何 He's Blog</span></div><div class="main-menu mt-6 text-gray-600 ml-16"><a href="/" class="anchor cursor-pointer main-menu-item no-underline">Home</a><a href="/page/my-works" class="anchor cursor-pointer main-menu-item no-underline">Works</a><a href="/page/about" class="anchor cursor-pointer main-menu-item no-underline">About</a><div class="popup popup-activator cursor-pointer inline-flex items-center main-menu-item">Languages<span class="icon inline-flex items-center caret popup-caret relative transition">​<span class="icon-icon material-icons" style="font-size: 20px;">arrow_drop_down</span></span></div><!----></div></div></div><div class="main-right flex-grow overflow-auto"><div class="px-4 main-body"><div class="article-view"><div class="article mt-14"><div class="article-head"><div class="article-title prose"><h1>Simple Solution for Vue3 meta</h1></div><div class="article-meta mt-5"><small>20-06 2021</small></div></div><div class="article-body mt-8 text-gray-600 text"><div class="article-content prose"><p>With it, you can set meta title, description, keywords, and author. Same life cycle as the component which it used in. Reset when the component <code>onUnmounted</code>. It can be used in the <code>setup</code> of the composition api, or in <code>created, mounted, and methods</code> in the traditional Vue component style.</p>
+<h2 id="installation">Installation</h2>
+<p>create <code>HTMLHead.tsx</code></p>
+<pre><code class="language-tsx">import {
+  reactive,
+  onBeforeUnmount,
+  Teleport,
+  getCurrentInstance,
+  ComponentInternalInstance,
+} from 'vue'
+
+const store = reactive({
+  title: '',
+  description: '',
+  keywords: '',
+  author: '',
+})
+
+// try to remove existing elements
+try {
+  for (const sel of [
+    'title',
+    'meta[name="description"]',
+    'meta[name="keywords"]',
+    'meta[name="author"]',
+  ]) {
+    const el = document.head.querySelector(sel)
+    if (el) {
+      el.remove()
+    }
+  }
+} catch (error) {}
+
+export function HTMLHead() {
+  return (
+    &lt;Teleport to="head"&gt;
+      {store.title &amp;&amp; &lt;title&gt;{store.title}&lt;/title&gt;}
+      {store.description &amp;&amp; (
+        &lt;meta name="description" content={store.description} /&gt;
+      )}
+      {store.keywords &amp;&amp; &lt;meta name="keywords" content={store.keywords} /&gt;}
+      {store.author &amp;&amp; &lt;meta name="author" content={store.author} /&gt;}
+    &lt;/Teleport&gt;
+  )
+}
+
+export const useTitle = generateUseFunction('title')
+export const useDescription = generateUseFunction('description')
+export const useKeywords = generateUseFunction('keywords')
+export const useAuthor = generateUseFunction('author')
+
+function generateUseFunction(name: string) {
+  return (value: string, vm?: ComponentInternalInstance) =&gt; {
+    // @ts-ignore
+    store[name] = value
+    const thevm = vm || getCurrentInstance()
+    if (!thevm) {
+      throw new Error(
+        `HTMLHead use ${name}: the second argument is required when called outside of setup`
+      )
+    }
+    onBeforeUnmount(() =&gt; {
+      // @ts-ignore
+      if (store[name] === value) {
+        // @ts-ignore
+        store[name] = ''
+      }
+    }, thevm)
+  }
+}
+</code></pre>
+<p>import <code>HTMLHead</code> component and append to your root component, such as <code>App.vue</code></p>
+<pre><code class="language-vue">&lt;template&gt;
+  &lt;div id="app"&gt;
+    &lt;HTMLHead /&gt;
+  &lt;/div&gt;
+&lt;/template&gt;
+
+&lt;script&gt;
+  import { HTMLHead } from './HTMLHead.tsx'
+  export default {
+    components: { HTMLHead },
+  }
+&lt;/script&gt;
+</code></pre>
+<h2 id="usage">Usage</h2>
+<pre><code class="language-ts">import {
+  useTitle,
+  useDescription,
+  useKeywords,
+  useAuthor,
+} from './HTMLHead.tsx'
+</code></pre>
+<p>In <code>setup</code></p>
+<pre><code class="language-ts">setup() {
+  useTitle('title text')
+}
+</code></pre>
+<blockquote>
+<p>:warning: The second argument is required if used in asynchronous setup or outside of setup.</p>
+</blockquote>
+<p>In <code>created</code>, <code>mounted</code>, <code>methods</code></p>
+<pre><code class="language-ts">created() {
+  useTitle('title text', this)
+}
+</code></pre>
+<p>After await in asynchronous setup</p>
+<pre><code class="language-ts">async setup() {
+  const vm = getCurrentInstance()
+  await something
+  useTitle('title text', vm)
+}
+</code></pre>
+<p>Please tell me if you have more elegant code.</p>
+</div></div><div class="article-foot"></div><div class="gitalk-vue article-comments"><!----></div></div></div></div><div class="py-10 text-center text-sm text-gray-500">Copyright © He's Blog 2021. All rights reserved.</div></div><!----></div><!----></div>
+    
+  
+<script nomodule="">!function(){var e=document,t=e.createElement("script");if(!("noModule"in t)&&"onbeforeload"in t){var n=!1;e.addEventListener("beforeload",(function(e){if(e.target===t)n=!0;else if(!e.target.hasAttribute("nomodule")||!n)return;e.preventDefault()}),!0),t.type="module",t.src=".",e.head.appendChild(t),t.remove()}}();</script>
+  <script nomodule="" src="/assets/polyfills-legacy.3a2fdff1.js"></script>
+  <script nomodule="" id="vite-legacy-entry" data-src="/assets/index-legacy.4c5daddb.js">System.import(document.getElementById('vite-legacy-entry').getAttribute('data-src'))</script>
+
+
+<!----></body></html>
