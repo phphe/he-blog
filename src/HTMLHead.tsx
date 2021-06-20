@@ -13,6 +13,21 @@ const store = reactive({
   author: '',
 })
 
+// try to remove existing elements
+try {
+  for (const sel of [
+    'title',
+    'meta[name="description"]',
+    'meta[name="keywords"]',
+    'meta[name="author"]',
+  ]) {
+    const el = document.head.querySelector(sel)
+    if (el) {
+      el.remove()
+    }
+  }
+} catch (error) {}
+
 export function HTMLHead() {
   return (
     <Teleport to="head">

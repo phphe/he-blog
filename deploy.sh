@@ -16,4 +16,5 @@ git commit -m 'rebuild pages' --allow-empty
 # 如果发布到 https://<USERNAME>.github.io/<REPO>
 git push -f git@github.com:phphe/he-blog.git master:gh-pages
 
+rm -rf dist/.git
 cd -
