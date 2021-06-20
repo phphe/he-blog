@@ -6,15 +6,18 @@ const os = require('os')
 const Nightmare = require('nightmare')
 const { minify: minifyHTML } = require('html-minifier')
 const getAllUrls = require('./all-url.js')
+const { url } = require('koa-router')
 const tempDist = fs.mkdtempSync(path.join(os.tmpdir(), 'prerender-dist'))
 const maxPageConcurrent = 20
 const maxApiConcurrent = 20
 const RETRY = 3
+const origin = 'https://phphe.com/'
 
 start()
 
 async function start() {
   const { apiUrls, urls } = await getAllUrls()
+  genSitemapAndRobotsTXT(urls)
   await scrapePages(urls)
   await scrapeAllApi(apiUrls)
   fs.readdirSync(tempDist).forEach((name) => {
@@ -110,4 +113,36 @@ function writeFileSyncRecursively(filepath, contents) {
     fs.mkdirSync(dir, { recursive: true })
   }
   return fs.writeFileSync(filepath, contents)
+}
+
+function genSitemapAndRobotsTXT(urls) {
+  urls = urls.map((v) => {
+    if (!v.endsWith('/')) {
+      v += '/'
+    }
+    return v.replace(/^http.*?\/\/.+?\//, origin)
+  })
+  const lastmod = new Date().toISOString()
+  let t = urls
+    .map(
+      (url) => `<url>
+  <loc>${url}</loc>
+  <lastmod>${lastmod}</lastmod>
+  <priority>${url === origin ? '1.00' : '0.80'}</priority>
+</url>`
+    )
+    .join('\n')
+  let r = `<?xml version="1.0" encoding="UTF-8"?>
+<urlset
+      xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
+            http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
+  ${t}
+</urlset>`
+  fs.writeFileSync(path.join(tempDist, 'sitemap.xml'), r)
+  fs.writeFileSync(
+    path.join(tempDist, 'robots.txt'),
+    `Sitemap: ${origin}sitemap.xml`.trim()
+  )
 }

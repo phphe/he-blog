@@ -11,7 +11,7 @@ HTMLHead
   import I18n from './components/I18n.vue'
   import PageProgressBar from './components/PageProgressBar.vue'
   import { api } from './http'
-  import { HTMLHead } from './HTMLHead.tsx'
+  import { HTMLHead } from './HTMLHead'
 
   export default defineComponent({
     components: { default_layout, I18n, PageProgressBar, HTMLHead },
