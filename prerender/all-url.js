@@ -35,10 +35,6 @@ module.exports = async function () {
       mainUrls.push(`${locale}/articles/${page}`)
     }
   }
-  const urls = arrayDistinct([
-    ...mainUrls,
-    ...genUrlsWithI18n(['/'], PREVIEW_BASE_URL),
-  ])
   mainUrls.forEach((url, index) => {
     if (url.includes(`${PREVIEW_BASE_URL}/${FALLBACK_LOCALE}/`)) {
       mainUrls[index] = url.replace(
@@ -47,6 +43,10 @@ module.exports = async function () {
       )
     }
   })
+  const urls = arrayDistinct([
+    ...mainUrls,
+    ...genUrlsWithI18n(['/'], PREVIEW_BASE_URL),
+  ])
   const apiUrls = arrayDistinct(apiMainUrls)
   return { urls, apiUrls }
   function genUrlsWithI18n(mainUrls, baseUrl) {

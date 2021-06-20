@@ -9,7 +9,7 @@
   export default defineComponent({
     components: {
       asyncComponent: defineAsyncComponent(() => {
-        const t = import('./_async.vue')
+        const t = import('./gitalk_lazyload.vue')
         loaded = true
         return t
       }),

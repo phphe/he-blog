@@ -4,6 +4,7 @@
 </template>
 
 <script lang="ts">
+  // don't use this file diretly. You should use index.vue
   import { defineComponent, nextTick } from 'vue'
   import 'gitalk/dist/gitalk.css'
   import Gitalk from 'gitalk'
@@ -35,6 +36,12 @@
         })
       },
     },
+    // created() {},
+    mounted() {
+      if (this.id) {
+        this.renderComments()
+      }
+    },
     methods: {
       renderComments() {
         const gitalk = new Gitalk({
@@ -43,12 +50,6 @@
         })
         gitalk.render(this.$el.querySelector('.gitalk-vue-placeholder'))
       },
-    },
-    // created() {},
-    mounted() {
-      if (this.id) {
-        this.renderComments()
-      }
     },
   })
 </script>
