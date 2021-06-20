@@ -39,6 +39,14 @@ module.exports = async function () {
     ...mainUrls,
     ...genUrlsWithI18n(['/'], PREVIEW_BASE_URL),
   ])
+  mainUrls.forEach((url, index) => {
+    if (url.includes(`${PREVIEW_BASE_URL}/${FALLBACK_LOCALE}/`)) {
+      mainUrls[index] = url.replace(
+        `${PREVIEW_BASE_URL}/${FALLBACK_LOCALE}/`,
+        `${PREVIEW_BASE_URL}/`
+      )
+    }
+  })
   const apiUrls = arrayDistinct(apiMainUrls)
   return { urls, apiUrls }
   function genUrlsWithI18n(mainUrls, baseUrl) {
