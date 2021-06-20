@@ -1,6 +1,7 @@
 <template lang="pug">
 I18n
 div(v-is="layout")
+PageProgressBar
 HTMLHead
 </template>
 
@@ -8,11 +9,12 @@ HTMLHead
   import { defineComponent } from 'vue'
   import default_layout from './layouts/default_layout.vue'
   import I18n from './components/I18n.vue'
+  import PageProgressBar from './components/PageProgressBar.vue'
   import { api } from './http'
   import { HTMLHead } from './HTMLHead.tsx'
 
   export default defineComponent({
-    components: { default_layout, I18n, HTMLHead },
+    components: { default_layout, I18n, PageProgressBar, HTMLHead },
     // props: {},
     data() {
       return {
