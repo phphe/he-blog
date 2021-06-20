@@ -4,6 +4,7 @@
   "scripts": {
     "dev": "vite",
     "build": "vite build",
+    "prerender": "node prerender/prerender.js",
     "serve": "vite preview",
     "api": "nodemon api/api.js",
     "cmd-generator-build-watch": "tsc --project  ./src/content/cmd-generators --watch",
