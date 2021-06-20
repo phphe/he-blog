@@ -9,7 +9,7 @@
     .article-body.mt-8.text-gray-600.text
       .article-content.prose(v-html="item.content")
     .article-foot
-    .article-comments(ref="comments")
+    Gitalk.article-comments(:id="articleKey" :config="gitalkConfig")
 </template>
 
 <script lang="ts">
@@ -18,20 +18,30 @@
   import { defineComponent, nextTick } from 'vue'
   import dayjs from 'dayjs'
   import { useOnAfterI18nRouteGenerated } from '../i18n'
-  import 'gitalk/dist/gitalk.css'
-  import Gitalk from 'gitalk'
+  import Gitalk from '../components/gitalk/index.vue'
 
   export default defineComponent({
-    // components: {},
+    components: { Gitalk },
     // props: {},
     data() {
       return {
         item: null,
+        gitalkConfig: {
+          clientID: '7deb5052bc5372bf9dc0',
+          clientSecret: '268fd7f2f9e669c8839ed4df2cc6176af0db5017',
+          repo: 'he-blog',
+          owner: 'phphe',
+          admin: ['phphe'],
+          distractionFreeMode: false, // Facebook-like distraction free mode
+        },
       }
     },
     computed: {
       created_at() {
         return dayjs(this.item.created_at).format('DD-MM YYYY')
+      },
+      articleKey() {
+        return `${this.$i18n.locale}/${this.item.slug}`
       },
     },
     watch: {
@@ -58,21 +68,6 @@
             params: { ...route.params, slug: this.item.alternate[to] },
           }
         }, this)
-        nextTick(() => {
-          this.renderComments()
-        })
-      },
-      renderComments() {
-        const gitalk = new Gitalk({
-          clientID: '7deb5052bc5372bf9dc0',
-          clientSecret: '268fd7f2f9e669c8839ed4df2cc6176af0db5017',
-          repo: 'he-blog',
-          owner: 'phphe',
-          admin: ['phphe'],
-          id: `${this.$i18n.locale}/${this.item.slug}`, // Ensure uniqueness and length less than 50
-          distractionFreeMode: false, // Facebook-like distraction free mode
-        })
-        gitalk.render(this.$refs.comments)
       },
     },
   })

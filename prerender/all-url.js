@@ -24,12 +24,16 @@ module.exports = async function () {
       mainUrls.push(`${PREVIEW_BASE_URL}/${locale}/page/${item.slug}`)
       apiMainUrls.push(`${API_BASE_URL}/${locale}/page/${item.slug}`)
     }
-    // TODO pages
-    // const {total, pageSize} = (await axios.get(`${API_BASE_URL}/${locale}/articles/1`)).data
-    // const pages = Math.ceil(total / pageSize)
-    // for (let page = 1; page < pages.length; page++) {
-    //   mainUrls.push(`/page/${item.slug}`)
-    // }
+    // pages
+    // only page api, no frontend pages, because they use url query, and are not important for seo
+    // 仅api, 没有前端分页的页面, 因为他们使用url参数, 并且对于seo不重要
+    const { total, pageSize } = (
+      await axios.get(`${API_BASE_URL}/${locale}/articles/1`)
+    ).data
+    const pages = Math.ceil(total / pageSize)
+    for (let page = 1; page <= pages.length; page++) {
+      mainUrls.push(`${locale}/articles/${page}`)
+    }
   }
   const urls = arrayDistinct([
     ...mainUrls,
