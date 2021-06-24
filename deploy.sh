@@ -4,7 +4,7 @@
 set -e
 
 # 进入生成的文件夹
-cd dist
+cd dist-pre
 # custom domain
 echo "phphe.com" > CNAME
 
@@ -16,5 +16,5 @@ git commit -m 'rebuild pages' --allow-empty
 # 如果发布到 https://<USERNAME>.github.io/<REPO>
 git push -f git@github.com:phphe/he-blog.git master:gh-pages
 
-rm -rf dist/.git
+rm -rf dist-pre/.git
 cd -

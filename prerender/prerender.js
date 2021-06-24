@@ -4,28 +4,29 @@ const axios = require('axios')
 const hp = require('helper-js')
 const os = require('os')
 const Nightmare = require('nightmare')
+const child_process = require('child_process')
 const { minify: minifyHTML } = require('html-minifier')
 const getAllUrls = require('./all-url.js')
 const { url } = require('koa-router')
-const tempDist = fs.mkdtempSync(path.join(os.tmpdir(), 'prerender-dist'))
 const maxPageConcurrent = 20
 const maxApiConcurrent = 20
 const RETRY = 3
 const origin = 'https://phphe.com/'
+const tempDist = path.join(os.tmpdir(), `prerender-dist-${hp.randString(32)}`)
 
 start()
 
 async function start() {
+  copyDir(path.join(__dirname, '../dist'), tempDist)
   const { apiUrls, urls } = await getAllUrls()
   genSitemapAndRobotsTXT(urls)
   await scrapePages(urls)
   await scrapeAllApi(apiUrls)
-  fs.readdirSync(tempDist).forEach((name) => {
-    fs.renameSync(
-      path.join(tempDist, name),
-      path.join(__dirname, '../dist', name)
-    )
-  })
+  const pre = path.join(__dirname, '../dist-pre')
+  if (fs.existsSync(pre)) {
+    rmDir(pre)
+  }
+  fs.renameSync(tempDist, pre)
 }
 
 function scrapeOnePage(url, opt = {}, count = 0) {
@@ -145,4 +146,12 @@ function genSitemapAndRobotsTXT(urls) {
     path.join(tempDist, 'robots.txt'),
     `Sitemap: ${origin}sitemap.xml`.trim()
   )
+}
+
+function copyDir(src, dist) {
+  child_process.spawnSync('cp', ['-r', src, dist])
+}
+
+function rmDir(src) {
+  child_process.spawnSync('rm', ['-rf', src])
 }

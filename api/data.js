@@ -27,6 +27,9 @@ function getAll() {
   const slugs = {}
   iterateLocale(FALLBACK_LOCALE)
   fs.readdirSync(contentPath).forEach((locale) => {
+    if (locale.startsWith('.') || locale.startsWith('_')) {
+      return
+    }
     if (!locale !== FALLBACK_LOCALE) {
       iterateLocale(locale)
     }
