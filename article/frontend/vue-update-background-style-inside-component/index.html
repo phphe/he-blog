@@ -1,0 +1,32 @@
+<!DOCTYPE html><html lang="en"><head>
+    <meta charset="UTF-8">
+    <!-- <link rel="icon" href="/favicon.ico" /> -->
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400&amp;display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <script type="module" crossorigin="" src="/assets/index.0a58b172.js"></script>
+  <link rel="modulepreload" href="/assets/vendor.9d904b36.js">
+  <link rel="stylesheet" href="/assets/index.55ebcceb.css">
+<link href="https://www.googletagmanager.com" rel="preconnect"><script async="" src="https://www.googletagmanager.com/gtag/js?id=G-GG17SFDKPV&amp;l=dataLayer"></script><link rel="alternate" href="http://127.0.0.1:5000/article/frontend/vue-update-background-style-inside-component" hreflang="en"><link rel="alternate" href="http://127.0.0.1:5000/zh/article/frontend/vue-update-background-style-inside-component" hreflang="zh"><title>Vue Update Background Style Inside a Component</title><link rel="preload" as="script" crossorigin="" href="/assets/article.0b6d4500.js"><link rel="stylesheet" href="/assets/article.35be2dc5.css"><script>window.__IS_GENERATED__ = true</script></head>
+  <body>
+    <div id="app" data-v-app=""><div class="default-layout fixed w-full h-full flex"><div class="main-sidebar flex-shrink-0 w-72 h-full overflow-hidden font-title flex flex-col"><!----><div class="flex-grow overflow-auto"><div class="main-title text-2xl text-gray-700 mt-32 ml-16"><!----><span class="">何 He's Blog</span></div><div class="main-menu mt-6 text-gray-600 ml-16"><a href="/" class="anchor cursor-pointer main-menu-item no-underline">Home</a><a href="/page/my-works" class="anchor cursor-pointer main-menu-item no-underline">Works</a><a href="/page/about" class="anchor cursor-pointer main-menu-item no-underline">About</a><div class="popup popup-activator cursor-pointer inline-flex items-center main-menu-item">Languages<span class="icon inline-flex items-center caret popup-caret relative transition">​<span class="icon-icon material-icons" style="font-size: 20px;">arrow_drop_down</span></span></div><!----></div></div></div><div class="main-right flex-grow overflow-auto"><div class="px-4 main-body"><div class="article-view"><div class="article mt-14"><div class="article-head"><div class="article-title prose"><h1>Vue Update Background Style Inside a Component</h1></div><div class="article-meta mt-5"><small>24-06 2021</small></div></div><div class="article-body mt-8 text-gray-600 text"><div class="article-content prose"><p>First, create a element in template:</p>
+<pre><code class="language-html">&lt;div v-html="'&lt;style&gt;'+styleText+'&lt;/style&gt;'"&gt;&lt;/div&gt;
+</code></pre>
+<p>Then change the value of <code>styleText</code>:</p>
+<pre><code class="language-js">styleText: `
+body {
+  background: #ffe4c4;
+}
+`.trim()
+</code></pre>
+<p>The style will update if the value of <code>styleText</code> changed. The style will also be removed after the component unmounted.</p>
+</div></div><div class="article-foot"></div><div class="gitalk-vue article-comments"><!----></div></div></div></div><div class="py-10 text-center text-sm text-gray-500">Copyright © He's Blog 2021. All rights reserved.</div></div><!----></div><!----></div>
+    
+  
+<script nomodule="">!function(){var e=document,t=e.createElement("script");if(!("noModule"in t)&&"onbeforeload"in t){var n=!1;e.addEventListener("beforeload",(function(e){if(e.target===t)n=!0;else if(!e.target.hasAttribute("nomodule")||!n)return;e.preventDefault()}),!0),t.type="module",t.src=".",e.head.appendChild(t),t.remove()}}();</script>
+  <script nomodule="" src="/assets/polyfills-legacy.3a2fdff1.js"></script>
+  <script nomodule="" id="vite-legacy-entry" data-src="/assets/index-legacy.4c5daddb.js">System.import(document.getElementById('vite-legacy-entry').getAttribute('data-src'))</script>
+
+
+<!----></body></html>
