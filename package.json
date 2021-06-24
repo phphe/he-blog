@@ -7,7 +7,6 @@
     "prerender": "node prerender/prerender.js",
     "serve": "vite preview",
     "api": "nodemon api/api.js",
-    "cmd-generator-build-watch": "tsc --project  ./src/content/cmd-generators --watch",
     "lint:script": "eslint --ext .ts,vue --ignore-path .gitignore .",
     "lint:style": "stylelint src/**/*.{css,scss,vue}"
   },
