@@ -71,7 +71,7 @@
           r.bind.to = this.to
         }
         // @ts-ignore
-        if (r.is === 'button' && !r.type) {
+        if (r.is === 'button' && !r.bind.type) {
           // @ts-ignore
           r.bind.type = 'button'
         }
