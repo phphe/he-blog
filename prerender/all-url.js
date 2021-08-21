@@ -48,7 +48,7 @@ module.exports = async function () {
     ...genUrlsWithI18n(['/'], PREVIEW_BASE_URL),
   ])
   const apiUrls = arrayDistinct(apiMainUrls)
-  return { urls, apiUrls }
+  return { urls, apiUrls, origin: PREVIEW_BASE_URL }
   function genUrlsWithI18n(mainUrls, baseUrl) {
     const r = []
     for (const url of mainUrls) {

@@ -16,9 +16,11 @@ const tempDist = path.join(os.tmpdir(), `prerender-dist-${hp.randString(32)}`)
 
 start()
 
+let sourceOrigin
 async function start() {
   copyDir(path.join(__dirname, '../dist'), tempDist)
-  const { apiUrls, urls } = await getAllUrls()
+  const { apiUrls, urls, origin: origin0 } = await getAllUrls()
+  sourceOrigin = origin0
   genSitemapAndRobotsTXT(urls)
   await scrapePages(urls)
   await scrapeAllApi(apiUrls)
@@ -42,6 +44,7 @@ function scrapeOnePage(url, opt = {}, count = 0) {
           '</head>',
           '<script>window.__IS_GENERATED__ = true</script></head>'
         )
+        html = replaceOrigin(html)
         html = minifyHTML(`<!DOCTYPE html>${html}`)
         writeFileSyncRecursively(
           path.join(
@@ -154,4 +157,10 @@ function copyDir(src, dist) {
 
 function rmDir(src) {
   child_process.spawnSync('rm', ['-rf', src])
+}
+
+function replaceOrigin(html) {
+  let s = sourceOrigin.replace(/\/$/, '')
+  let o = origin.replace(/\/$/, '')
+  return html.replace(s, o)
 }
