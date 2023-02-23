@@ -1,14 +1,44 @@
 ---
-import { astroI18n, t, l } from "astro-i18n";
+import DefaultLayoutVue from "./vDefaultLayout.vue";
+import { localizePath } from "astro-i18next";
+import i18n from "i18next";
+import { HeadHrefLangs } from "astro-i18next/components";
+import BaseHead from "../components/BaseHead.astro";
+import { setLocaleByPath } from "../plugins/utils";
+import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
 
-astroI18n.init(Astro);
+type Props = { htmlTitle: string; htmlDescription: string };
+const { htmlTitle, htmlDescription } = Astro.props;
+
+// setLocaleByPath(Astro.url.pathname);
 ---
 
-<html lang={astroI18n.langCode}>
+<html lang={i18n.language}>
   <head>
-    <slot name="head" />
+    <BaseHead title={htmlTitle} description={htmlDescription} />
+    <HeadHrefLangs />
+    {
+      i18n.language === "en" && (
+        <link
+          href="https://fonts.googleapis.com/css2?family=Cairo:wght@400&display=swap"
+          rel="stylesheet"
+        />
+      )
+    }
+    <style>
+      html[lang="en"] {
+        font-family: Cairo;
+      }
+    </style>
   </head>
   <body>
-    <slot />
+    <DefaultLayoutVue client:load name={SITE_TITLE} homeURL={localizePath("/")}>
+      <Fragment slot="menu">
+        <a class="main-menu-item" href={localizePath("/")}>Home</a>
+        <a class="main-menu-item" href="/works">Works</a>
+        <a class="main-menu-item" href="/about">About</a>
+      </Fragment>
+      <slot />
+    </DefaultLayoutVue>
   </body>
 </html>

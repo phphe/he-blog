@@ -1,13 +1,16 @@
 ---
+import i18n from "i18next";
+
 const { date } = Astro.props;
+let dateLocale = i18n.language === "en" ? "en-us" : "zh-CN";
 ---
 
 <time datetime={date.toISOString()}>
-	{
-		date.toLocaleDateString('en-us', {
-			year: 'numeric',
-			month: 'short',
-			day: 'numeric',
-		})
-	}
+  {
+    date.toLocaleDateString(dateLocale, {
+      year: "numeric",
+      month: "short",
+      day: "numeric",
+    })
+  }
 </time>

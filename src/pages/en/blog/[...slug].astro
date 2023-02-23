@@ -1,11 +1,18 @@
 ---
-import { CollectionEntry, getCollection } from "astro:content";
-import BlogPost from "../../../layouts/BlogPost.astro";
+import DefaultLayout from "@/layouts/DefaultLayout.astro";
+import FormattedDate from "@/components/FormattedDate.astro";
+import type { CollectionEntry } from "astro:content";
+import { getCurrentPosts, setLocaleByPath } from "@/plugins/utils";
+import i18n from "i18next";
+
+await i18n.changeLanguage("en");
 
 export async function getStaticPaths() {
-  const posts = await getCollection("blog");
+  const posts = await getCurrentPosts();
+  console.log("=====================1=", i18n.language);
+
   return posts.map((post) => ({
-    params: { slug: post.slug },
+    params: { slug: post.slug.replace(/^\w+\//, "") }, // remove lang prefix
     props: post,
   }));
 }
@@ -15,7 +22,30 @@ const post = Astro.props;
 const { Content } = await post.render();
 ---
 
-<BlogPost {...post.data}>
-  <h1>{post.data.title}</h1>
-  <Content />
-</BlogPost>
+<DefaultLayout
+  htmlTitle={post.data.title}
+  htmlDescription={post.data.description}
+>
+  <div class="page-blog-post mt-14">
+    <div class="post-header">
+      <div class="post-title prose">
+        <h1>{post.data.title}</h1>
+      </div>
+      <div class="post-meta mt-5">
+        <small><FormattedDate date={post.data.date} /></small>
+      </div>
+    </div>
+    <div class="post-body mt-8 text-gray-600">
+      <div class="post-content prose">
+        <Content />
+      </div>
+    </div>
+    <div class="post-footer"></div>
+  </div>
+</DefaultLayout>
+
+<style>
+  .page-blog-post .prose {
+    max-width: 800px;
+  }
+</style>
