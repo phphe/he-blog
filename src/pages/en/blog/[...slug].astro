@@ -2,14 +2,12 @@
 import DefaultLayout from "@/layouts/DefaultLayout.astro";
 import FormattedDate from "@/components/FormattedDate.astro";
 import type { CollectionEntry } from "astro:content";
-import { getCurrentPosts, setLocaleByPath } from "@/plugins/utils";
-import i18n from "i18next";
-
-await i18n.changeLanguage("en");
+import { getCurrentPosts } from "@/plugins/utils";
+import { astroI18n } from "astro-i18n";
+astroI18n.init(Astro);
 
 export async function getStaticPaths() {
   const posts = await getCurrentPosts();
-  console.log("=====================1=", i18n.language);
 
   return posts.map((post) => ({
     params: { slug: post.slug.replace(/^\w+\//, "") }, // remove lang prefix

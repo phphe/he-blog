@@ -1,7 +1,9 @@
 ---
 import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
 import DefaultLayout from "../layouts/DefaultLayout.astro";
-import { postUrl, getCurrentPosts } from "../plugins/utils";
+import { postUrl, getCurrentPosts } from "@/plugins/utils";
+import { astroI18n } from "astro-i18n";
+astroI18n.init(Astro);
 
 const posts = await getCurrentPosts();
 ---

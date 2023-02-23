@@ -3,6 +3,8 @@ import DefaultLayout from "@/layouts/DefaultLayout.astro";
 import FormattedDate from "@/components/FormattedDate.astro";
 import type { CollectionEntry } from "astro:content";
 import { getCurrentPosts } from "@/plugins/utils";
+import { astroI18n } from "astro-i18n";
+astroI18n.init(Astro);
 
 export async function getStaticPaths() {
   const posts = await getCurrentPosts();

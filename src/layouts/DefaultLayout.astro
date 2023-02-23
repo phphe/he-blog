@@ -1,24 +1,18 @@
 ---
 import DefaultLayoutVue from "./vDefaultLayout.vue";
-import { localizePath } from "astro-i18next";
-import i18n from "i18next";
-import { HeadHrefLangs } from "astro-i18next/components";
 import BaseHead from "../components/BaseHead.astro";
-import { setLocaleByPath } from "../plugins/utils";
-import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
+import { SITE_TITLE } from "../consts";
+import { astroI18n, l, t } from "astro-i18n";
 
 type Props = { htmlTitle: string; htmlDescription: string };
 const { htmlTitle, htmlDescription } = Astro.props;
-
-// setLocaleByPath(Astro.url.pathname);
 ---
 
-<html lang={i18n.language}>
+<html lang={astroI18n.langCode}>
   <head>
     <BaseHead title={htmlTitle} description={htmlDescription} />
-    <HeadHrefLangs />
     {
-      i18n.language === "en" && (
+      astroI18n.langCode === "en" && (
         <link
           href="https://fonts.googleapis.com/css2?family=Cairo:wght@400&display=swap"
           rel="stylesheet"
@@ -32,11 +26,11 @@ const { htmlTitle, htmlDescription } = Astro.props;
     </style>
   </head>
   <body>
-    <DefaultLayoutVue client:load name={SITE_TITLE} homeURL={localizePath("/")}>
+    <DefaultLayoutVue client:load name={SITE_TITLE} homeURL={l("/")}>
       <Fragment slot="menu">
-        <a class="main-menu-item" href={localizePath("/")}>Home</a>
-        <a class="main-menu-item" href="/works">Works</a>
-        <a class="main-menu-item" href="/about">About</a>
+        <a class="main-menu-item" href={l("/")}>{t("Home")}</a>
+        <a class="main-menu-item" href="/works">{t("Works")}</a>
+        <a class="main-menu-item" href="/about">{t("About")}</a>
       </Fragment>
       <slot />
     </DefaultLayoutVue>

@@ -1,4 +1,4 @@
-> :warning: **Must use npm because of astro-i18next.**
+> :warning: **If you use astro-i18next, must use npm. astro-i18next does not work, use astro-i18n instead.**
 > :warning: **mdi-js does not work for unknow reason.**
 
 # Astro Starter Kit: Blog

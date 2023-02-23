@@ -1,8 +1,8 @@
 ---
-import i18n from "i18next";
+import { astroI18n } from "astro-i18n";
 
 const { date } = Astro.props;
-let dateLocale = i18n.language === "en" ? "en-us" : "zh-CN";
+let dateLocale = astroI18n.langCode === "en" ? "en-us" : "zh-CN";
 ---
 
 <time datetime={date.toISOString()}>
