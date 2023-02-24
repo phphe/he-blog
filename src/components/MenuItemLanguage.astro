@@ -1,0 +1,16 @@
+---
+import { astroI18n } from "astro-i18n";
+
+let isEn = astroI18n.langCode === "en"
+---
+<a class="main-menu-item menu-item-language" href={isEn ? '/' : '/en'}>{isEn? '中文' : 'English'}</a>
+
+<script>
+const supportZh = () => navigator.languages.find(v => v.startsWith('zh'))
+let el = document.querySelector('.menu-item-language')!
+if (!document.querySelector('html')!.getAttribute('lang')!.startsWith('zh')) {
+  if (!supportZh()) {
+    el.innerHTML = 'Chinese'
+  }
+}
+</script>

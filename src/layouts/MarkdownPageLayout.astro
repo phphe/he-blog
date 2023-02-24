@@ -1,0 +1,32 @@
+---
+import DefaultLayout from "@/layouts/DefaultLayout.astro";
+import { astroI18n } from "astro-i18n";
+astroI18n.init(Astro);
+
+const { content } = Astro.props;
+const titleDisplay = content.titleDisplay !==false
+---
+<DefaultLayout
+  htmlTitle={content.title}
+  htmlDescription={content.description}
+>
+  <div class="page-blog-post pt-14">
+    {titleDisplay && <div class="post-header">
+      <div class="post-title prose">
+        <h1>{content.title}</h1>
+      </div>
+    </div>}
+    <div class={`post-body text-gray-600 ${titleDisplay && 'mt-8'}`}>
+      <div class="post-content prose">
+        <slot />
+      </div>
+    </div>
+    <div class="post-footer"></div>
+  </div>
+</DefaultLayout>
+
+<style>
+  .page-blog-post .prose {
+    max-width: 800px;
+  }
+</style>

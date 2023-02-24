@@ -3,6 +3,7 @@ import DefaultLayoutVue from "./vDefaultLayout.vue";
 import BaseHead from "../components/BaseHead.astro";
 import { SITE_TITLE } from "../consts";
 import { astroI18n, l, t } from "astro-i18n";
+import MenuItemLanguage from "@/components/MenuItemLanguage.astro";
 
 type Props = { htmlTitle: string; htmlDescription: string };
 const { htmlTitle, htmlDescription } = Astro.props;
@@ -13,14 +14,21 @@ const { htmlTitle, htmlDescription } = Astro.props;
     <BaseHead title={htmlTitle} description={htmlDescription} />
     {
       astroI18n.langCode === "en" && (
+        <>
+        <link rel="preconnect" href="https://fonts.googleapis.com"/>
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
         <link
-          href="https://fonts.googleapis.com/css2?family=Cairo:wght@400&display=swap"
+          href="https://fonts.googleapis.com/css2?family=Cairo:wght@400&family=Open+Sans:wght@300;400;500;600;700&display=swap"
           rel="stylesheet"
         />
+        </>
       )
     }
-    <style>
-      html[lang="en"] {
+    <style is:global>
+      html[lang="en"]{
+        font-family: 'Open Sans';
+      }
+      html[lang="en"] .main-sidebar {
         font-family: Cairo;
       }
     </style>
@@ -29,8 +37,9 @@ const { htmlTitle, htmlDescription } = Astro.props;
     <DefaultLayoutVue client:load name={SITE_TITLE} homeURL={l("/")}>
       <Fragment slot="menu">
         <a class="main-menu-item" href={l("/")}>{t("Home")}</a>
-        <a class="main-menu-item" href="/works">{t("Works")}</a>
-        <a class="main-menu-item" href="/about">{t("About")}</a>
+        <a class="main-menu-item" href={l("/works")}>{t("Works")}</a>
+        <a class="main-menu-item" href={l("/about")}>{t("About")}</a>
+        <MenuItemLanguage/>
       </Fragment>
       <slot />
     </DefaultLayoutVue>

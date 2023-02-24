@@ -4,6 +4,7 @@ import FormattedDate from "@/components/FormattedDate.astro";
 import type { CollectionEntry } from "astro:content";
 import { getCurrentPosts } from "@/plugins/utils";
 import { astroI18n } from "astro-i18n";
+import Disqus from "@/components/Disqus.astro";
 astroI18n.init(Astro);
 
 export async function getStaticPaths() {
@@ -24,7 +25,7 @@ const { Content } = await post.render();
   htmlTitle={post.data.title}
   htmlDescription={post.data.description}
 >
-  <div class="page-blog-post mt-14">
+  <div class="page-blog-post pt-14">
     <div class="post-header">
       <div class="post-title prose">
         <h1>{post.data.title}</h1>
@@ -39,6 +40,9 @@ const { Content } = await post.render();
       </div>
     </div>
     <div class="post-footer"></div>
+    <div class="post-comments mt-10">
+      <Disqus/>
+    </div>
   </div>
 </DefaultLayout>
 
