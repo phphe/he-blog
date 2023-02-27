@@ -8,7 +8,7 @@ cd dist
 # custom domain
 echo "phphe.com" > CNAME
 
-git init
+git init -b master
 git add -A
 git commit -m 'deploy'
 git commit -m 'rebuild pages' --allow-empty
