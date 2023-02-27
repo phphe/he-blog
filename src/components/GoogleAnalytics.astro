@@ -1,0 +1,19 @@
+---
+import { GOOGLE_ANALYTICS_ID } from "@/consts";
+---
+
+<!-- Google tag (gtag.js) -->
+<script
+  is:inline
+  async
+  src={`https://www.googletagmanager.com/gtag/js?id=${GOOGLE_ANALYTICS_ID}`}
+></script>
+<script is:inline data-gid={GOOGLE_ANALYTICS_ID}>
+  window.dataLayer = window.dataLayer || [];
+  function gtag() {
+    dataLayer.push(arguments);
+  }
+  gtag("js", new Date());
+  var gid = document.querySelector(`script[data-gid]`).getAttribute("data-gid");
+  gtag("config", gid);
+</script>

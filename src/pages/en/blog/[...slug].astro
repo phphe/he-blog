@@ -3,13 +3,12 @@ import DefaultLayout from "@/layouts/DefaultLayout.astro";
 import FormattedDate from "@/components/FormattedDate.astro";
 import type { CollectionEntry } from "astro:content";
 import { getCurrentPosts } from "@/plugins/utils";
-import { astroI18n } from "astro-i18n";
-import Disqus from "@/components/Disqus.astro";
+import { astroI18n, l } from "astro-i18n";
+import Disqus from "@/components/DisqusZH.astro";
 astroI18n.init(Astro);
 
 export async function getStaticPaths() {
   const posts = await getCurrentPosts();
-
   return posts.map((post) => ({
     params: { slug: post.slug.replace(/^\w+\//, "") }, // remove lang prefix
     props: post,
@@ -39,9 +38,24 @@ const { Content } = await post.render();
         <Content />
       </div>
     </div>
-    <div class="post-footer"></div>
+    <div class="post-footer">
+      {
+        post.data.tags?.length > 0 && (
+          <div class="post-tags mt-4">
+            {post.data.tags.map((tag) => (
+              <a
+                class="post-tag mr-2 text-xs inline-flex items-center leading-sm px-3 py-1 rounded-md bg-white text-gray-700 border"
+                href={l(`/tag/${tag}`)}
+              >
+                {tag}
+              </a>
+            ))}
+          </div>
+        )
+      }
+    </div>
     <div class="post-comments mt-10">
-      <Disqus/>
+      <Disqus />
     </div>
   </div>
 </DefaultLayout>

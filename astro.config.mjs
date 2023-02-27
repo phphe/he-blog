@@ -10,10 +10,13 @@ import tailwind from "@astrojs/tailwind";
 // https://astro.build/config
 import vue from "@astrojs/vue";
 
+
 // https://astro.build/config
 export default defineConfig({
   site: SITE_URL,
-  integrations: [i18n(), mdx(), sitemap(), tailwind(), vue()],
+  integrations: [i18n(), mdx(), sitemap({
+    lastmod: new Date(),
+  }), , tailwind(), vue(),],
   markdown: {
     shikiConfig: {
       // Choose from Shiki's built-in themes (or add your own)

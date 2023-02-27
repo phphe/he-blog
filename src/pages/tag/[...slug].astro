@@ -1,0 +1,45 @@
+---
+import DefaultLayout from "@/layouts/DefaultLayout.astro";
+import { postUrl, getCurrentPosts } from "@/plugins/utils";
+import type { CollectionEntry } from "astro:content";
+import * as hp from "helper-js";
+import { astroI18n } from "astro-i18n";
+astroI18n.init(Astro);
+
+export async function getStaticPaths() {
+  const posts = await getCurrentPosts();
+  let tags = [];
+  for (const post of posts) {
+    tags.push(...post.data.tags);
+  }
+  tags = hp.arrayDistinct(tags, (tag) => tag);
+  return tags.map((tag) => ({
+    params: { slug: tag },
+    props: { tag, posts },
+  }));
+}
+
+type Props = { tag: string; posts: CollectionEntry<"blog">[] };
+
+const { tag, posts } = Astro.props;
+const postsForTag = posts.filter((post) => post.data.tags.includes(tag));
+---
+
+<DefaultLayout
+  htmlTitle={`${tag} - Tag`}
+  htmlDescription={`The content with tag ${tag}`}
+>
+  <div class="page-tag pt-20">
+    {
+      postsForTag.map((post) => (
+        <div class="post mb-6">
+          <div class="post-header">
+            <a class="post-title text-2xl" href={postUrl(post.slug)}>
+              {post.data.title}
+            </a>
+          </div>
+        </div>
+      ))
+    }
+  </div>
+</DefaultLayout>
