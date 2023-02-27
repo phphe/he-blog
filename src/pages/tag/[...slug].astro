@@ -1,7 +1,6 @@
 ---
 import DefaultLayout from "@/layouts/DefaultLayout.astro";
-import { postUrl, getCurrentPosts } from "@/plugins/utils";
-import type { CollectionEntry } from "astro:content";
+import { getCurrentPosts, BlogPost } from "@/plugins/utils";
 import * as hp from "helper-js";
 import { astroI18n } from "astro-i18n";
 astroI18n.init(Astro);
@@ -19,7 +18,7 @@ export async function getStaticPaths() {
   }));
 }
 
-type Props = { tag: string; posts: CollectionEntry<"blog">[] };
+type Props = { tag: string; posts: BlogPost[] };
 
 const { tag, posts } = Astro.props;
 const postsForTag = posts.filter((post) => post.data.tags.includes(tag));
@@ -34,7 +33,7 @@ const postsForTag = posts.filter((post) => post.data.tags.includes(tag));
       postsForTag.map((post) => (
         <div class="post mb-6">
           <div class="post-header">
-            <a class="post-title text-2xl" href={postUrl(post.slug)}>
+            <a class="post-title text-2xl" href={post.path}>
               {post.data.title}
             </a>
           </div>

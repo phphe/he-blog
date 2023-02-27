@@ -1,7 +1,7 @@
 ---
 import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
 import DefaultLayout from "../layouts/DefaultLayout.astro";
-import { postUrl, getCurrentPosts } from "@/plugins/utils";
+import { getCurrentPosts } from "@/plugins/utils";
 import { astroI18n } from "astro-i18n";
 astroI18n.init(Astro);
 
@@ -14,7 +14,7 @@ const posts = await getCurrentPosts();
       posts.map((post) => (
         <div class="post mb-6">
           <div class="post-header">
-            <a class="post-title text-2xl" href={postUrl(post.slug)}>
+            <a class="post-title text-2xl" href={post.path}>
               {post.data.title}
             </a>
           </div>

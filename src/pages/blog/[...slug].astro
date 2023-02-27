@@ -1,20 +1,19 @@
 ---
 import DefaultLayout from "@/layouts/DefaultLayout.astro";
 import FormattedDate from "@/components/FormattedDate.astro";
-import type { CollectionEntry } from "astro:content";
-import { getCurrentPosts } from "@/plugins/utils";
-import { astroI18n, l } from "astro-i18n";
+import { getCurrentPosts, BlogPost } from "@/plugins/utils";
 import Disqus from "@/components/DisqusZH.astro";
+import { astroI18n, l } from "astro-i18n";
 astroI18n.init(Astro);
 
 export async function getStaticPaths() {
   const posts = await getCurrentPosts();
   return posts.map((post) => ({
-    params: { slug: post.slug.replace(/^\w+\//, "") }, // remove lang prefix
+    params: { slug: post.slugWithoutLocale },
     props: post,
   }));
 }
-type Props = CollectionEntry<"blog">;
+type Props = BlogPost;
 
 const post = Astro.props;
 const { Content } = await post.render();
