@@ -18,7 +18,7 @@ export async function getCurrentPosts(
       return r;
     })
   )
-    .sort((a, b) => a.data.date.valueOf() - b.data.date.valueOf())
+    .sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf())
     .map((row) => {
       const slugWithoutLocale = row.slug.replace(/^\w+\//, "");
       const newRow: BlogPost = {
