@@ -7,6 +7,8 @@ set -e
 cd dist
 # custom domain
 echo "phphe.com" > CNAME
+# adsense
+echo "google.com, pub-5757487942993573, DIRECT, f08c47fec0942fa0" > "ads.txt"
 # required. Or file or directory which starts with underscore can't be found. https://github.blog/2009-12-29-bypassing-jekyll-on-github-pages/
 echo "" > .nojekyll
 
