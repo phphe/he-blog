@@ -2,7 +2,7 @@
 title: "Conventional Changelog for Lerna 5 and 6"
 description: "Config lerna with conventional changelog."
 date: "2023-03-02 01:09"
-tags: ["tool", "lerna"]
+tags: ["lerna", "tool"]
 ---
 
 Previously, I used [cz-lerna-changelog](https://github.com/atlassian/cz-lerna-changelog). The problem was that the library hasn't been updated for a long time, and it only works for Lerna 3 and earlier versions. So I created [cz-conventional-changelog-lerna](https://github.com/phphe/cz-conventional-changelog-lerna). It works for Lerna 5 and later versions.

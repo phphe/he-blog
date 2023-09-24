@@ -2,7 +2,7 @@
 title: "Vue3 Refresh Router View"
 description: "Vue3 refresh router view component."
 date: "2021-06-24"
-tags: ["frontend", "vue"]
+tags: ["vue", "frontend"]
 ---
 
 Add a key to router-view, then change the key, router-view will reload.

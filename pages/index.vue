@@ -1,12 +1,7 @@
 <template>
-  <main>
+  <main class="page-home pt-20 sm:px-10">
     <ContentList path="/blog" v-slot="{ list }">
-      <div v-for="article in list" :key="article._path">
-        <nuxt-link :to="article._path">
-          <h2>{{ article.title }}</h2>
-        </nuxt-link>
-        <p>{{ article.description }}</p>
-      </div>
+      <MyContentList :list="list" />
     </ContentList>
   </main>
 </template>

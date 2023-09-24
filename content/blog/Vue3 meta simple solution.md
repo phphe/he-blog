@@ -2,7 +2,7 @@
 title: "Simple solution for vue3 meta"
 description: "Use Teleport component to append meta elements into HTML head."
 date: "2021-06-24"
-tags: ["frontend", "vue"]
+tags: ["vue", "frontend"]
 ---
 
 With it, you can set meta title, description, keywords, and author. Same life cycle as the component which it used in. Reset when the component `onUnmounted`. It can be used in the `setup` of the composition api, or in `created, mounted, and methods` in the traditional Vue component style.

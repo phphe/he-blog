@@ -2,7 +2,7 @@
 title: "一个文件搞定vue3 meta"
 description: "使用Teleport添加元素到HTML head标签内."
 date: "2021-06-24"
-tags: ["frontend", "vue"]
+tags: ["vue", "frontend"]
 ---
 
 可以设置 meta title, description, keywords, author. 与组件同生命周期, 组件卸载时还原. 可以在 composition api 的 setup 里使用, 也可以再 Vue 传统组件写法里的 created, mounted, methods 里使用.

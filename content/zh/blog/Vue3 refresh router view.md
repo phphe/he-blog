@@ -2,7 +2,7 @@
 title: "Vue3 刷新 Router View"
 description: "Vue3重新加载路由视图组件。"
 date: "2021-06-24"
-tags: ["frontend", "vue"]
+tags: ["vue", "frontend"]
 ---
 
 给 router-view 添加 key, 改变 key 时 router-view 将会创建刷新.

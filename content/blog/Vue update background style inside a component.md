@@ -2,7 +2,7 @@
 title: "Vue Update Background Style Inside a Component"
 description: ""
 date: "2021-06-24"
-tags: ["frontend", "vue"]
+tags: ["vue", "frontend"]
 ---
 
 First, create a element in template:

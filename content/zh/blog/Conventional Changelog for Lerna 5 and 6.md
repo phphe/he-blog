@@ -2,7 +2,7 @@
 title: "Lerna 5/6 配置对话式更新日志（Conventional Changelog）"
 description: "配置lerna，并增加对话式更新日志（Conventional Changelog）。"
 date: "2023-03-02 01:09"
-tags: ["tool", "lerna"]
+tags: ["lerna", "tool"]
 ---
 
 之前，我使用[cz-lerna-changelog](https://github.com/atlassian/cz-lerna-changelog)。问题是这个库很久不更新了，而且仅适用于 lerna 3 及更早版本。所以我创建了[cz-conventional-changelog-lerna](https://github.com/phphe/cz-conventional-changelog-lerna)。它适用于 lerna 5 及以后的版本。

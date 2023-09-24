@@ -2,7 +2,7 @@
 title: "Vue 在组件内部更新 body 样式"
 description: ""
 date: "2021-06-24"
-tags: ["frontend", "vue"]
+tags: ["vue", "frontend"]
 ---
 
 首先, 在模板里创建一个新元素:
