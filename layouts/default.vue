@@ -1,6 +1,6 @@
 <template>
   <div class="default-layout fixed w-full h-full flex">
-    <div v-if="sidebarVisible" @click="sidebarVisible = false"
+    <div v-if="sidebarVisible && !sm" @click="sidebarVisible = false"
       class="fixed top-0 left-0 w-full h-full bg-black opacity-20">
     </div>
     <Transition name="main-sidebar-slide-fade">
