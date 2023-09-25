@@ -32,6 +32,9 @@ devDependencies:
   nuxt:
     specifier: ^3.7.3
     version: 3.7.3(sass@1.68.0)
+  nuxt-disqus:
+    specifier: ^1.0.1
+    version: 1.0.1
   nuxt-gtag:
     specifier: ^1.1.1
     version: 1.1.1
@@ -6450,6 +6453,17 @@ packages:
       fsevents: 2.3.3
     dev: true
 
+  /nuxt-disqus@1.0.1:
+    resolution: {integrity: sha512-audsnAo2fXuhZFCOAcoYogwpIAs/xTfi+pUK0aarnEbiV5cFIFnITtN6u0KAqntISZBvZUzOqxoqzPjodYoMjA==}
+    dependencies:
+      '@nuxt/kit': 3.7.3
+      defu: 6.1.2
+      vue3-disqus: 1.0.6
+    transitivePeerDependencies:
+      - rollup
+      - supports-color
+    dev: true
+
   /nuxt-gtag@1.1.1:
     resolution: {integrity: sha512-AkTK++e4vFHyoc04GcRx7dQvx9xchVLav/YAP3aM6oL/ZkZtW50M0/2re4zmPWjeu36ckbpcOHJrj+zptQIMyw==}
     dependencies:
@@ -9146,6 +9160,12 @@ packages:
       vue: ^3.2.0
     dependencies:
       '@vue/devtools-api': 6.5.0
+      vue: 3.3.4
+    dev: true
+
+  /vue3-disqus@1.0.6:
+    resolution: {integrity: sha512-IfYHMqVklVEZVOUuQo3pjD/+I40ajph4mMfiBZdxHnGvuFO+ZEB3QjSF8e6VVVYcMWf5Tvbl6AfdLdwwRzdW5w==}
+    dependencies:
       vue: 3.3.4
     dev: true
 

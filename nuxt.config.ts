@@ -9,6 +9,7 @@ export default defineNuxtConfig({
     "@nuxtjs/google-fonts",
     "nuxt-gtag",
     "nuxt-simple-sitemap",
+    "nuxt-disqus",
   ],
   i18n: {
     locales: ["en", "zh"], // used in URL path prefix
@@ -29,12 +30,15 @@ export default defineNuxtConfig({
   colorMode: {
     classSuffix: "", // no suffix, so color mode class will be `dark` or `light` in html tag
   },
-  // @ts-ignore
   googleFonts: {
     download: true,
     families: {
       Cairo: [400],
       "Open+Sans": [300, 400, 500, 600, 700],
     },
+  },
+  // @ts-ignore
+  disqus: {
+    shortname: process.env.NUXT_DISQUS_SHORTNAME,
   },
 });

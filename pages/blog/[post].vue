@@ -4,7 +4,7 @@
       <template #default="{ doc }">
         <MyContentDetail :doc="doc" />
         <div class="post-comments mt-10">
-          <!-- <Disqus /> -->
+          <DisqusComments :identifier="$route.path" />
         </div>
       </template>
       <template #not-found>
