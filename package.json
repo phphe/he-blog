@@ -19,6 +19,7 @@
     "@nuxtjs/tailwindcss": "^6.8.0",
     "@tailwindcss/typography": "^0.5.10",
     "nuxt": "^3.7.3",
+    "nuxt-gtag": "^1.1.1",
     "sass": "^1.68.0"
   }
 }
