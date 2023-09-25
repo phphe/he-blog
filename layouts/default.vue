@@ -15,14 +15,14 @@
             <NuxtLinkLocale to="/" class="main-menu-item">{{ $t('Home') }}</NuxtLinkLocale>
             <NuxtLinkLocale to="/works" class="main-menu-item">{{ $t('Works') }}</NuxtLinkLocale>
             <NuxtLinkLocale to="/about" class="main-menu-item">{{ $t('About') }}</NuxtLinkLocale>
-            <NuxtLinkLocale to="/" :locale="i18n.locale.value === 'en' ? 'zh' : 'en'" class="main-menu-item">{{
-              i18n.locale.value === 'en'
-              ?
-              '中文' : 'English' }}</NuxtLinkLocale>
             <a class="main-menu-item cursor-pointer select-none" @click="$colorMode.preference = colorModeInfo.next">
               {{ colorModeInfo.curText }}
               <Icon :path="mdiWhiteBalanceSunny" />
             </a>
+            <NuxtLinkLocale to="/" :locale="i18n.locale.value === 'en' ? 'zh' : 'en'" class="main-menu-item">{{
+              i18n.locale.value === 'en'
+              ?
+              '中文' : 'English' }}</NuxtLinkLocale>
           </div>
         </div>
       </div>

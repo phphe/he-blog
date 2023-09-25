@@ -6,6 +6,7 @@ export default defineNuxtConfig({
     "@nuxtjs/tailwindcss",
     "@nuxtjs/i18n",
     "@nuxtjs/color-mode",
+    "@nuxtjs/google-fonts",
   ],
   i18n: {
     locales: ["en", "zh"], // used in URL path prefix
@@ -26,21 +27,12 @@ export default defineNuxtConfig({
   colorMode: {
     classSuffix: "", // no suffix, so color mode class will be `dark` or `light` in html tag
   },
-  app: {
-    head: {
-      // preload fonts
-      link: [
-        { rel: "preconnect", href: "https://fonts.googleapis.com" },
-        {
-          rel: "preconnect",
-          href: "https://fonts.gstatic.com",
-          crossorigin: "anonymous",
-        },
-        {
-          rel: "stylesheet",
-          href: "https://fonts.googleapis.com/css2?family=Cairo:wght@400&family=Open+Sans:wght@300;400;500;600;700&display=swap",
-        },
-      ],
+  // @ts-ignore
+  googleFonts: {
+    download: true,
+    families: {
+      Cairo: [400],
+      "Open+Sans": [300, 400, 500, 600, 700],
     },
   },
 });
