@@ -20,6 +20,7 @@
     "@tailwindcss/typography": "^0.5.10",
     "nuxt": "^3.7.3",
     "nuxt-gtag": "^1.1.1",
+    "nuxt-simple-sitemap": "^3.3.4",
     "sass": "^1.68.0"
   }
 }

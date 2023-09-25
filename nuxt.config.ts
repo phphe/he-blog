@@ -8,6 +8,7 @@ export default defineNuxtConfig({
     "@nuxtjs/color-mode",
     "@nuxtjs/google-fonts",
     "nuxt-gtag",
+    "nuxt-simple-sitemap",
   ],
   i18n: {
     locales: ["en", "zh"], // used in URL path prefix
