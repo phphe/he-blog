@@ -1,7 +1,7 @@
 <template>
   <time v-if="dateObj" :datetime="dateObj.toISOString()">
     {{
-      dateObj.toLocaleDateString('en-us', {
+      dateObj.toLocaleDateString(i18n.locale.value, {
         year: "numeric",
         month: "short",
         day: "numeric",
@@ -10,6 +10,7 @@
 </template>
 
 <script setup lang="ts">
+const i18n = useI18n()
 const props = defineProps({
   date: {
     type: [String, Date],

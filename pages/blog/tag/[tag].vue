@@ -1,12 +1,12 @@
 <template>
   <main class="page-tags pt-20 sm:px-10">
-    <h1 class="text-3xl mb-8 font-medium">Posts for tag "{{ tag }}"</h1>
+    <h1 class="text-3xl mb-8 font-medium">{{ $t('postsForTag', [tag]) }}</h1>
     <ContentList :query="query">
       <template #default="{ list }">
         <MyContentList :list="list" />
       </template>
       <template #not-found>
-        <p>No posts found.</p>
+        <p class="text-xl">{{ $t('notFound') }}</p>
       </template>
     </ContentList>
   </main>

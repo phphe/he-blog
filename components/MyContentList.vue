@@ -1,11 +1,11 @@
 <template>
   <div class="my-content-list">
     <div v-for="doc in list" :key="doc._path" class="post mb-8">
-      <div class="doc-header flex items-center flex-wrap">
+      <div class="doc-header">
         <span v-if="doc.tags && doc.tags[0]" class="doc-title-tag mr-3">{{ doc.tags[0] }}</span>
-        <NuxtLink class="doc-title text-2xl" :to="doc._path">
+        <NuxtLinkLocale class="doc-title text-2xl max-sm:text-xl" :to="doc._path">
           {{ doc.title }}
-        </NuxtLink>
+        </NuxtLinkLocale>
       </div>
       <div class="doc-meta mt-1">
         <span class="doc-date mr-2">
@@ -28,8 +28,9 @@ const props = defineProps({
 <style lang="scss">
 .my-content-list {
   .doc-title-tag {
-    @apply inline-block text-white rounded-md text-sm bg-gray-800;
+    @apply inline-block text-white rounded-md text-sm bg-gray-800 align-text-bottom;
     padding: 3px 6px;
+    @apply dark:bg-gray-600;
   }
 
   .doc-title {
@@ -39,11 +40,11 @@ const props = defineProps({
   }
 
   .doc-date {
-    @apply text-sm text-gray-500;
+    @apply text-sm text-gray-500 dark:text-gray-400;
   }
 
   .doc-description {
-    @apply text-gray-600;
+    @apply text-gray-600 dark:text-gray-300;
   }
 }
 </style>

@@ -1,11 +1,8 @@
 <template>
-  <main class="page-blog-post pt-14 sm:px-10">
+  <main class="page-other-page pt-14 sm:px-10">
     <ContentDoc>
       <template #default="{ doc }">
-        <MyContentDetail :doc="doc" />
-        <div class="post-comments mt-10">
-          <!-- <Disqus /> -->
-        </div>
+        <MyContentDetail :doc="doc" :header="false" />
       </template>
       <template #not-found>
         <p class="text-xl">{{ $t('notFound') }}</p>
@@ -15,7 +12,7 @@
 </template>
 
 <style lang="scss">
-.page-blog-post {
+.page-other-page {
   .prose {
     max-width: 800px;
   }
