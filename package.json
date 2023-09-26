@@ -3,10 +3,11 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "build": "nuxt build",
     "dev": "nuxt dev",
+    "deploy": "nuxt generate & sh deploy.sh",
     "generate": "nuxt generate",
     "preview": "nuxt preview",
+    "build": "nuxt build",
     "postinstall": "nuxt prepare"
   },
   "devDependencies": {
