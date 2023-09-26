@@ -1,3 +1,11 @@
+# he-blog-nuxt
+
+My blog, at https://phphe.com/
+
+## Open Source
+
+Based on Nuxt 3. If you want to copy the source code and theme, you can clone the repository. This repository is open source, except for the `content` directory because it contains my blog content. Please check the `LICENSE` file.
+
 # Nuxt 3 Minimal Starter
 
 Look at the [Nuxt 3 documentation](https://nuxt.com/docs/getting-started/introduction) to learn more.
