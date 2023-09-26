@@ -30,4 +30,10 @@ https://github.com/phphe/he-blog
 - Tailwind CSS: https://tailwindcss.com/
   - @nuxtjs/tailwindcss: https://tailwindcss.nuxtjs.org/
   - @tailwindcss/typography: https://tailwindcss.com/docs/typography-plugin
+- Nuxt Color-Mode: https://nuxt.com/modules/color-mode
+- Nuxt Google-Fonts: https://nuxt.com/modules/google-fonts
+- Nuxt Simple-Sitemap: https://nuxt.com/modules/simple-sitemap
+- Nuxt Gtag: https://nuxt.com/modules/gtag
+- Nuxt Disqus: https://nuxt.com/modules/disqus
+- Material Design Icons: https://pictogrammers.com/library/mdi/
 - <del>Astro: https://astro.build</del> 旧版本，已弃用, 源码在[astrojs 分支](https://github.com/phphe/he-blog/tree/astrojs)
