@@ -9,7 +9,7 @@
         <Icon :path="mdiClose" v-if="sm" @click="sidebarVisible = false" class="absolute right-2 top-2" :size="25" />
         <div class="flex-grow overflow-auto">
           <div class="main-title text-2xl text-gray-700 mt-32 ml-16">
-            <NuxtLinkLocale to="/">{{ name }}</NuxtLinkLocale>
+            <NuxtLinkLocale to="/">{{ appName }}</NuxtLinkLocale>
           </div>
           <div class="main-menu mt-6 text-gray-600 ml-16">
             <NuxtLinkLocale to="/" class="main-menu-item">{{ $t('Home') }}</NuxtLinkLocale>
@@ -31,11 +31,11 @@
       <div class="px-4 main-body">
         <slot />
       </div>
-      <div class="py-10 text-center text-sm text-gray-500 dark:text-gray-300">Copyright © {{ name }} {{ year }}. All
+      <div class="py-10 text-center text-sm text-gray-500 dark:text-gray-300">Copyright © {{ appName }} {{ year }}. All
         rights reserved.</div>
     </div>
     <div v-if="sm" class="sm-top-menu flex justify-between fixed w-full top-0 left-0 px-4 py-3 border-b">
-      <NuxtLinkLocale to="/">{{ name }}</NuxtLinkLocale>
+      <NuxtLinkLocale to="/">{{ appName }}</NuxtLinkLocale>
       <Icon :path="mdiMenu" @click="sidebarVisible
         = !sidebarVisible" :size="23" />
     </div>
@@ -45,6 +45,7 @@
 <script setup lang="ts">
 import { mdiMenu, mdiClose, mdiWhiteBalanceSunny } from '@mdi/js'
 
+const config = useRuntimeConfig()
 const i18n = useI18n()
 
 useHead({
@@ -53,10 +54,18 @@ useHead({
   },
 })
 
-const name = `He's Blog`
+const appName = config.public.appName
 const sidebarVisible = ref(false)
 const year = new Date().getFullYear()
 
+// 
+useHead({
+  titleTemplate: (title) => {
+    return (!title || title === appName) ? appName : `${title} - ${appName}`;
+  }
+})
+
+// 
 const windowSize = ref({
   width: 1920,
   height: 900,

@@ -14,11 +14,12 @@
 <script setup lang="ts">
 import type { QueryBuilderParams } from '@nuxt/content/dist/runtime/types'
 
+const config = useRuntimeConfig()
 const app = useNuxtApp()
-const route = useRoute()
-const tag = computed(() => {
-  let m = route.path.match(/\/tag\/([^.\/?#]+)/)
-  return m![1]!
+
+useSeoMeta({
+  title: null,
+  description: config.public.appDescription
 })
 
 const query: QueryBuilderParams = computed(() => ({ path: app.$localeContentPath('/blog'), sort: [{ date: -1 }] }))

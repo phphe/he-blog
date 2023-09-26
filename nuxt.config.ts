@@ -41,4 +41,10 @@ export default defineNuxtConfig({
   disqus: {
     shortname: process.env.NUXT_DISQUS_SHORTNAME,
   },
+  runtimeConfig: {
+    public: {
+      appName: "",
+      appDescription: "",
+    },
+  },
 });
