@@ -23,7 +23,7 @@ echo "" > .nojekyll
 
 git init -b main
 git add -A
-git commit -m 'deploy'
+git commit -m "deploy $(date)"
 
 # Push to GitHub Pages repository
 git push -f git@github.com:$repository main:gh-pages
