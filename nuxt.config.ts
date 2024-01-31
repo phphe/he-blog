@@ -8,7 +8,7 @@ export default defineNuxtConfig({
     "@nuxtjs/color-mode",
     "@nuxtjs/google-fonts",
     "nuxt-gtag",
-    "nuxt-simple-sitemap",
+    "@nuxtjs/sitemap",
     "nuxt-disqus",
   ],
   i18n: {
@@ -43,6 +43,9 @@ export default defineNuxtConfig({
   // @ts-ignore
   disqus: {
     shortname: "hes-blog-1",
+  },
+  site: {
+    url: "https://phphe.com",
   },
   runtimeConfig: {
     public: {},

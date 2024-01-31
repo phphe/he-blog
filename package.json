@@ -17,12 +17,12 @@
     "@nuxtjs/color-mode": "^3.3.0",
     "@nuxtjs/google-fonts": "^3.0.2",
     "@nuxtjs/i18n": "npm:@nuxtjs/i18n-edge",
+    "@nuxtjs/sitemap": "^5.0.5",
     "@nuxtjs/tailwindcss": "^6.8.0",
     "@tailwindcss/typography": "^0.5.10",
     "nuxt": "^3.10.0",
     "nuxt-disqus": "^1.0.1",
     "nuxt-gtag": "^1.1.1",
-    "nuxt-simple-sitemap": "^4.4.1",
     "sass": "^1.68.0"
   }
 }
