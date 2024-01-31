@@ -1,0 +1,30 @@
+name: Generate and Deploy to Github Pages
+
+on:
+  push:
+    branches:
+      - nuxt
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v2
+        with:
+          node-version: "18"
+
+      - name: Install Dependencies
+        run: npm install
+
+      - name: Build and Deploy to Github Pages
+        run: |
+          npm run generate
+          git config --global user.email "phphe@outlook.com"
+          git config --global user.name "phphe"
+          chmod +x ./deploy.sh  # add executable permission
+          ./deploy.sh
