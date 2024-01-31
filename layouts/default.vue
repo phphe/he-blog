@@ -45,7 +45,7 @@
 <script setup lang="ts">
 import { mdiMenu, mdiClose, mdiWhiteBalanceSunny } from '@mdi/js'
 
-const config = useRuntimeConfig()
+const config = useAppConfig()
 const i18n = useI18n()
 
 useHead({
@@ -54,7 +54,7 @@ useHead({
   },
 })
 
-const appName = config.public.appName
+const appName = config.appName
 const sidebarVisible = ref(false)
 const year = new Date().getFullYear()
 

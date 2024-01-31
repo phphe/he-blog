@@ -37,14 +37,14 @@ export default defineNuxtConfig({
       "Open+Sans": [300, 400, 500, 600, 700],
     },
   },
+  gtag: {
+    id: "G-GG17SFDKPV",
+  },
   // @ts-ignore
   disqus: {
-    shortname: process.env.NUXT_DISQUS_SHORTNAME,
+    shortname: "hes-blog-1",
   },
   runtimeConfig: {
-    public: {
-      appName: "",
-      appDescription: "",
-    },
+    public: {},
   },
 });
