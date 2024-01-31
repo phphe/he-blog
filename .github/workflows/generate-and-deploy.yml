@@ -28,3 +28,5 @@ jobs:
           git config --global user.name "phphe"
           chmod +x ./deploy.sh  # add executable permission
           ./deploy.sh
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
