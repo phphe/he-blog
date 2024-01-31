@@ -20,7 +20,7 @@ jobs:
           node-version: "18"
 
       - name: Install and Build
-        run: npm install & npm run generate
+        run: npm install && npm run generate
 
       - name: Extra Files
         run: |
