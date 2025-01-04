@@ -12,10 +12,9 @@
 <script setup lang="ts">
 const runtimeConfig = useRuntimeConfig();
 const localePath = useLocalePath();
-const { data } = await useAsyncData("home-posts", () => {
-  console.log("route changed", localePath("/blog"));
-  return queryContent(localePath("/blog")).find();
-});
+const { data } = await useAsyncData("home-posts", () =>
+  queryContent(localePath("/blog")).find()
+);
 
 useSeoMeta({
   title: null,
