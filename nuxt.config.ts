@@ -26,6 +26,7 @@ export default defineNuxtConfig({
 
   content: {
     // https://content.nuxt.com/get-started/configuration#highlight
+    // still need config 'pre' tag background color. I code it in layout file.
     highlight: {
       theme: {
         // Default theme (same as single string)

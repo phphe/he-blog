@@ -188,3 +188,13 @@ const colorModeInfo = computed(() => {
   opacity: 0;
 }
 </style>
+
+<style lang="scss">
+// custom pre tag's background color
+pre.shiki.shiki-themes {
+  background-color: #fdf6e3 !important;
+}
+.dark pre.shiki.shiki-themes {
+  background-color: #24292e !important;
+}
+</style>
