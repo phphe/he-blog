@@ -1,3 +1,7 @@
+const appName = "He's Blog";
+const appDescription =
+  "A blog about frontend development, JavaScript, Vue, React.";
+
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
   devtools: { enabled: true },
@@ -58,10 +62,14 @@ export default defineNuxtConfig({
 
   site: {
     url: "https://phphe.com",
+    name: appName,
   },
 
   runtimeConfig: {
-    public: {},
+    public: {
+      appName,
+      appDescription,
+    },
   },
 
   compatibilityDate: "2025-01-04",

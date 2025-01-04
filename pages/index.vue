@@ -12,10 +12,10 @@
 </template>
 
 <script setup lang="ts">
-const config = useAppConfig();
+const runtimeConfig = useRuntimeConfig();
 
 useSeoMeta({
   title: null,
-  description: config.appDescription,
+  description: runtimeConfig.public.appDescription,
 });
 </script>

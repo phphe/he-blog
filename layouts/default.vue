@@ -1,28 +1,52 @@
 <template>
   <div class="default-layout fixed w-full h-full flex">
-    <div v-if="sidebarVisible && !sm" @click="sidebarVisible = false"
-      class="fixed top-0 left-0 w-full h-full bg-black opacity-20">
-    </div>
+    <div
+      v-if="sidebarVisible && !sm"
+      @click="sidebarVisible = false"
+      class="fixed top-0 left-0 w-full h-full bg-black opacity-20"
+    ></div>
     <Transition name="main-sidebar-slide-fade">
-      <div class="main-sidebar flex-shrink-0 w-72 h-full overflow-hidden font-title flex flex-col"
-        :class="{ 'fixed z-10': sm }" v-show="!sm || sidebarVisible">
-        <Icon :path="mdiClose" v-if="sm" @click="sidebarVisible = false" class="absolute right-2 top-2" :size="25" />
+      <div
+        class="main-sidebar flex-shrink-0 w-72 h-full overflow-hidden font-title flex flex-col"
+        :class="{ 'fixed z-10': sm }"
+        v-show="!sm || sidebarVisible"
+      >
+        <Icon
+          :path="mdiClose"
+          v-if="sm"
+          @click="sidebarVisible = false"
+          class="absolute right-2 top-2"
+          :size="25"
+        />
         <div class="flex-grow overflow-auto">
           <div class="main-title text-2xl text-gray-700 mt-32 ml-16">
             <NuxtLinkLocale to="/">{{ appName }}</NuxtLinkLocale>
           </div>
           <div class="main-menu mt-6 text-gray-600 ml-16">
-            <NuxtLinkLocale to="/" class="main-menu-item">{{ $t('Home') }}</NuxtLinkLocale>
-            <NuxtLinkLocale to="/works" class="main-menu-item">{{ $t('Works') }}</NuxtLinkLocale>
-            <NuxtLinkLocale to="/about" class="main-menu-item">{{ $t('About') }}</NuxtLinkLocale>
-            <a class="main-menu-item cursor-pointer select-none" @click="$colorMode.preference = colorModeInfo.next">
+            <NuxtLinkLocale to="/" class="main-menu-item">{{
+              $t("Home")
+            }}</NuxtLinkLocale>
+            <NuxtLinkLocale to="/works" class="main-menu-item">{{
+              $t("Works")
+            }}</NuxtLinkLocale>
+            <NuxtLinkLocale to="/about" class="main-menu-item">{{
+              $t("About")
+            }}</NuxtLinkLocale>
+            <a
+              class="main-menu-item cursor-pointer select-none"
+              @click="$colorMode.preference = colorModeInfo.next"
+            >
               {{ colorModeInfo.curText }}
               <Icon :path="mdiWhiteBalanceSunny" />
             </a>
-            <NuxtLinkLocale to="/" :locale="i18n.locale.value === 'en' ? 'zh' : 'en'" class="main-menu-item">{{
-              i18n.locale.value === 'en'
-              ?
-              '中文' : 'English' }}</NuxtLinkLocale>
+            <NuxtLinkLocale
+              to="/"
+              :locale="i18n.locale.value === 'en' ? 'zh' : 'en'"
+              class="main-menu-item"
+              >{{
+                i18n.locale.value === "en" ? "中文" : "English"
+              }}</NuxtLinkLocale
+            >
           </div>
         </div>
       </div>
@@ -31,84 +55,90 @@
       <div class="px-4 main-body">
         <slot />
       </div>
-      <div class="py-10 text-center text-sm text-gray-500 dark:text-gray-300">Copyright © {{ appName }} {{ year }}. All
-        rights reserved.</div>
+      <div class="py-10 text-center text-sm text-gray-500 dark:text-gray-300">
+        Copyright © {{ appName }} {{ year }}. All rights reserved.
+      </div>
     </div>
-    <div v-if="sm" class="sm-top-menu flex justify-between fixed w-full top-0 left-0 px-4 py-3 border-b">
+    <div
+      v-if="sm"
+      class="sm-top-menu flex justify-between fixed w-full top-0 left-0 px-4 py-3 border-b"
+    >
       <NuxtLinkLocale to="/">{{ appName }}</NuxtLinkLocale>
-      <Icon :path="mdiMenu" @click="sidebarVisible
-        = !sidebarVisible" :size="23" />
+      <Icon
+        :path="mdiMenu"
+        @click="sidebarVisible = !sidebarVisible"
+        :size="23"
+      />
     </div>
   </div>
 </template>
-  
-<script setup lang="ts">
-import { mdiMenu, mdiClose, mdiWhiteBalanceSunny } from '@mdi/js'
 
-const config = useAppConfig()
-const i18n = useI18n()
+<script setup lang="ts">
+import { mdiMenu, mdiClose, mdiWhiteBalanceSunny } from "@mdi/js";
+
+const runtimeConfig = useRuntimeConfig();
+const i18n = useI18n();
 
 useHead({
   htmlAttrs: {
     lang: i18n.locale,
   },
-})
+});
 
-const appName = config.appName
-const sidebarVisible = ref(false)
-const year = new Date().getFullYear()
+const appName = runtimeConfig.public.appName;
+const sidebarVisible = ref(false);
+const year = new Date().getFullYear();
 
-// 
+//
 useHead({
   titleTemplate: (title) => {
-    return (!title || title === appName) ? appName : `${title} - ${appName}`;
-  }
-})
+    return !title || title === appName ? appName : `${title} - ${appName}`;
+  },
+});
 
-// 
+//
 const windowSize = ref({
   width: 1920,
   height: 900,
-})
+});
 const updateWindowSize = () => {
   windowSize.value = {
     width: window.innerWidth,
     height: window.innerHeight,
-  }
-}
+  };
+};
 
 onMounted(() => {
-  updateWindowSize()
-  window.addEventListener('resize', updateWindowSize)
-})
+  updateWindowSize();
+  window.addEventListener("resize", updateWindowSize);
+});
 onUnmounted(() => {
-  window.removeEventListener('resize', updateWindowSize)
-})
+  window.removeEventListener("resize", updateWindowSize);
+});
 
-const sm = computed(() => windowSize.value.width < 760)
+const sm = computed(() => windowSize.value.width < 760);
 
 // color mode
 const mapping = {
-  system: 'autoColor',
-  dark: 'darkColor',
-  light: 'lightColor',
-}
-const colorMode = useColorMode()
+  system: "autoColor",
+  dark: "darkColor",
+  light: "lightColor",
+};
+const colorMode = useColorMode();
 const colorModeInfo = computed(() => {
-  const cur = colorMode.preference
+  const cur = colorMode.preference;
   // @ts-ignore
-  const curText = i18n.t(mapping[cur])
-  const keys = Object.keys(mapping)
-  let i = keys.indexOf(cur)
-  const next = keys[i + 1] || keys[0]
+  const curText = i18n.t(mapping[cur]);
+  const keys = Object.keys(mapping);
+  let i = keys.indexOf(cur);
+  const next = keys[i + 1] || keys[0];
   return {
     curText,
-    next
-  }
-})
-
+    next,
+  };
+});
 </script>
-  
+
 <style lang="scss">
 .default-layout {
   font-family: "Open Sans";
@@ -116,7 +146,7 @@ const colorModeInfo = computed(() => {
 
 .main-sidebar {
   font-family: Cairo;
-  background-image: url('/assets/img/bg-day.jpg');
+  background-image: url("/assets/img/bg-day.jpg");
   background-size: cover;
   background-position: center bottom;
 }
@@ -139,8 +169,7 @@ const colorModeInfo = computed(() => {
   }
 
   .main-sidebar {
-    background-image: url('/assets/img/bg-night.jpg');
-
+    background-image: url("/assets/img/bg-night.jpg");
   }
 }
 
@@ -159,4 +188,3 @@ const colorModeInfo = computed(() => {
   opacity: 0;
 }
 </style>
-  
