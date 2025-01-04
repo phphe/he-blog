@@ -1,22 +1,17 @@
 <template>
   <main class="page-tags pt-20 sm:px-10">
     <h1 class="text-3xl mb-8 font-medium">{{ title }}</h1>
-    <ContentList :query="query">
-      <template #default="{ list }">
-        <MyContentList :list="list" />
-      </template>
-      <template #not-found>
-        <p class="text-xl">{{ $t("notFound") }}</p>
-      </template>
-    </ContentList>
+    <template v-if="data">
+      <MyContentList :list="data" />
+    </template>
+    <template v-else>
+      <p class="text-xl">{{ $t("notFound") }}</p>
+    </template>
   </main>
 </template>
 
 <script setup lang="ts">
-import type { QueryBuilderParams } from "@nuxt/content";
-
 const localePath = useLocalePath();
-const app = useNuxtApp();
 const route = useRoute();
 const i18n = useI18n();
 const tag = computed(() => {
@@ -30,9 +25,10 @@ useSeoMeta({
   description: "",
 });
 
-const query: QueryBuilderParams = computed(() => ({
-  path: localePath("/blog"),
-  where: [{ tags: { $in: [tag.value] } }],
-  sort: [{ date: -1 }],
-}));
+const { data } = await useAsyncData("tag-posts", () =>
+  queryContent(localePath("/blog"))
+    .where({ tags: { $in: [tag.value] } })
+    .sort({ _id: -1 })
+    .find()
+);
 </script>

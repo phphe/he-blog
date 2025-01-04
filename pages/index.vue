@@ -1,19 +1,20 @@
 <template>
   <main class="page-home pt-20 sm:px-10">
-    <ContentList :path="localePath('/blog')">
-      <template v-slot="{ list }">
-        <MyContentList :list="list" />
-      </template>
-      <template #not-found>
-        <p class="text-xl">{{ $t("notFound") }}</p>
-      </template>
-    </ContentList>
+    <template v-if="data">
+      <MyContentList :list="data" />
+    </template>
+    <template v-else>
+      <p class="text-xl">{{ $t("notFound") }}</p>
+    </template>
   </main>
 </template>
 
 <script setup lang="ts">
 const runtimeConfig = useRuntimeConfig();
 const localePath = useLocalePath();
+const { data } = await useAsyncData("home-posts", () =>
+  queryContent(localePath("/blog")).sort({ _id: -1 }).find()
+);
 
 useSeoMeta({
   title: null,
