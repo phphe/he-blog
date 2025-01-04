@@ -1,6 +1,6 @@
 <template>
   <main class="page-home pt-20 sm:px-10">
-    <ContentList :path="$localeContentPath('/blog')">
+    <ContentList :path="localePath('/blog')">
       <template v-slot="{ list }">
         <MyContentList :list="list" />
       </template>
@@ -13,6 +13,7 @@
 
 <script setup lang="ts">
 const runtimeConfig = useRuntimeConfig();
+const localePath = useLocalePath();
 
 useSeoMeta({
   title: null,

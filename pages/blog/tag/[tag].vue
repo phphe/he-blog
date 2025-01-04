@@ -15,6 +15,7 @@
 <script setup lang="ts">
 import type { QueryBuilderParams } from "@nuxt/content";
 
+const localePath = useLocalePath();
 const app = useNuxtApp();
 const route = useRoute();
 const i18n = useI18n();
@@ -30,7 +31,7 @@ useSeoMeta({
 });
 
 const query: QueryBuilderParams = computed(() => ({
-  path: app.$localeContentPath("/blog"),
+  path: localePath("/blog"),
   where: [{ tags: { $in: [tag.value] } }],
   sort: [{ date: -1 }],
 }));
