@@ -22,6 +22,7 @@ export default defineNuxtConfig({
     locales: ["en", "zh"], // used in URL path prefix
     defaultLocale: "en", // default locale of your project for Nuxt pages and routings
     strategy: "prefix_except_default",
+    detectBrowserLanguage: false,
   },
 
   content: {
