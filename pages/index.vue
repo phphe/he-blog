@@ -19,6 +19,7 @@ const route = useRoute();
 watch(
   () => route.fullPath,
   () => {
+    console.log("route changed", route.fullPath);
     refresh();
   }
 );
