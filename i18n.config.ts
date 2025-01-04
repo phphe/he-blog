@@ -1,4 +1,5 @@
 export default defineI18nConfig(() => ({
+  legacy: false, // to use Composition API. will be removed at vue-i18n v12 https://vue-i18n.intlify.dev/api/general.html#legacy
   messages: {
     zh: {
       Home: "首页",

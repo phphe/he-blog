@@ -1,26 +1,21 @@
 <template>
   <main class="page-home pt-20 sm:px-10">
-    <ContentList :query="query">
-      <template #default="{ list }">
+    <ContentList :path="$localeContentPath('/blog')">
+      <template v-slot="{ list }">
         <MyContentList :list="list" />
       </template>
       <template #not-found>
-        <p class="text-xl">{{ $t('notFound') }}</p>
+        <p class="text-xl">{{ $t("notFound") }}</p>
       </template>
     </ContentList>
   </main>
 </template>
 
 <script setup lang="ts">
-import type { QueryBuilderParams } from '@nuxt/content/dist/runtime/types'
-
-const config = useAppConfig()
-const app = useNuxtApp()
+const config = useAppConfig();
 
 useSeoMeta({
   title: null,
-  description: config.appDescription
-})
-
-const query: QueryBuilderParams = computed(() => ({ path: app.$localeContentPath('/blog'), sort: [{ date: -1 }] }))
+  description: config.appDescription,
+});
 </script>

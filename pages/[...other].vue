@@ -5,7 +5,7 @@
         <MyContentDetail :doc="doc" :header="false" />
       </template>
       <template #not-found>
-        <p class="text-xl">{{ $t('notFound') }}</p>
+        <p class="text-xl">{{ $t("notFound") }}</p>
       </template>
     </ContentDoc>
   </main>
