@@ -28,7 +28,6 @@ useSeoMeta({
 const { data } = await useAsyncData("tag-posts", () =>
   queryContent(localePath("/blog"))
     .where({ tags: { $in: [tag.value] } })
-    .sort({ _id: -1 })
     .find()
 );
 </script>

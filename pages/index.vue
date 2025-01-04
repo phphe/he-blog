@@ -13,7 +13,7 @@
 const runtimeConfig = useRuntimeConfig();
 const localePath = useLocalePath();
 const { data } = await useAsyncData("home-posts", () =>
-  queryContent(localePath("/blog")).sort({ _id: -1 }).find()
+  queryContent(localePath("/blog")).find()
 );
 
 useSeoMeta({
