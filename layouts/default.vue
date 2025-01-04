@@ -36,7 +36,7 @@
               class="main-menu-item cursor-pointer select-none"
               @click="$colorMode.preference = colorModeInfo.next"
             >
-              {{ colorModeInfo.curText }}
+              <client-only>{{ colorModeInfo.curText }}</client-only>
               <Icon :path="mdiWhiteBalanceSunny" />
             </a>
             <a
