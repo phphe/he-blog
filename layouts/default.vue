@@ -44,14 +44,6 @@
               class="main-menu-item"
               >{{ i18n.locale.value === "en" ? "中文" : "English" }}</a
             >
-            <NuxtLinkLocale
-              to="/"
-              :locale="i18n.locale.value === 'en' ? 'zh' : 'en'"
-              class="main-menu-item"
-              >{{
-                i18n.locale.value === "en" ? "中文" : "English"
-              }}</NuxtLinkLocale
-            >
           </div>
         </div>
       </div>
@@ -79,6 +71,17 @@
 </template>
 
 <script setup lang="ts">
+/*
+Use a instead of NuxtLinkLocale in home page locale switch, because it doesn't work in generated static html.
+<NuxtLinkLocale
+              to="/"
+              :locale="i18n.locale.value === 'en' ? 'zh' : 'en'"
+              class="main-menu-item"
+              >{{
+                i18n.locale.value === "en" ? "中文" : "English"
+              }}</NuxtLinkLocale
+            >
+*/
 import { mdiMenu, mdiClose, mdiWhiteBalanceSunny } from "@mdi/js";
 
 const runtimeConfig = useRuntimeConfig();
