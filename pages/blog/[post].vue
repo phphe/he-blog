@@ -3,12 +3,13 @@
     <ContentDoc>
       <template #default="{ doc }">
         <MyContentDetail :doc="doc" />
-        <div class="post-comments mt-10">
+        <!-- cancel disquscomment because ad -->
+        <!-- <div class="post-comments mt-10">
           <DisqusComments :identifier="$route.path" />
-        </div>
+        </div> -->
       </template>
       <template #not-found>
-        <p class="text-xl">{{ $t('notFound') }}</p>
+        <p class="text-xl">{{ $t("notFound") }}</p>
       </template>
     </ContentDoc>
   </main>
