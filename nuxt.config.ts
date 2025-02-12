@@ -37,6 +37,21 @@ export default defineNuxtConfig({
         // Theme used if `html.sepia`
         sepia: "monokai",
       },
+      langs: [
+        // default, check https://content.nuxt.com/docs/getting-started/configuration#highlight
+        "json",
+        "js",
+        "ts",
+        "html",
+        "css",
+        "vue",
+        "shell",
+        "mdc",
+        "md",
+        "yaml",
+        // custom
+        "python",
+      ],
     },
   },
 
