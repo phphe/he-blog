@@ -205,4 +205,8 @@ pre.shiki.shiki-themes {
 .dark pre.shiki.shiki-themes {
   background-color: #24292e !important;
 }
+// fix pre tag's text color in light mode
+.light pre.shiki.shiki-themes {
+  color: #000000;
+}
 </style>
