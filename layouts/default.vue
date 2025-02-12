@@ -39,10 +39,10 @@
               <client-only>{{ colorModeInfo.curText }}</client-only>
               <Icon :path="mdiWhiteBalanceSunny" />
             </a>
-            <a
-              :href="$localePath('/', i18n.locale.value === 'en' ? 'zh' : 'en')"
+            <NuxtLink
+              :to="$localePath('/', i18n.locale.value === 'en' ? 'zh' : 'en')"
               class="main-menu-item"
-              >{{ i18n.locale.value === "en" ? "中文" : "English" }}</a
+              >{{ i18n.locale.value === "en" ? "中文" : "English" }}</NuxtLink
             >
           </div>
         </div>

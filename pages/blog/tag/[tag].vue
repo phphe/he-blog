@@ -25,7 +25,8 @@ useSeoMeta({
   description: "",
 });
 
-const { data } = await useAsyncData("tag-posts", () =>
+const dataID = route.path; // for static site generation, so don't use fullpath. 针对静态站点所以不使用fullpath
+const { data } = await useAsyncData(dataID, () =>
   queryContent(localePath("/blog"))
     .where({ tags: { $in: [tag.value] } })
     .find()
