@@ -21,8 +21,9 @@ jobs:
 
       - name: Install and Build
         run: |
-          npm install && npm run generate
-          if [ $? -ne 0 ]; then
+          output=$(npm install && npm run generate)
+          echo "$output"
+          if echo "$output" | grep -i "ERROR"; then
             echo "Build failed. Stopped."
             exit 1
           fi
