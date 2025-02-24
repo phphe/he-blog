@@ -23,8 +23,12 @@ jobs:
         run: |
           output=$(npm install && npm run generate)
           echo "$output"
+          if [ $? -ne 0 ]; then
+            echo "Installation or build failed, command execution returned a non-zero status code."
+            exit 1
+          fi
           if echo "$output" | grep -i "ERROR"; then
-            echo "Build failed. Stopped."
+            echo "Installation or build failed because output contains 'ERROR'."
             exit 1
           fi
 
