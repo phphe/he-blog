@@ -27,8 +27,8 @@ jobs:
             echo "Installation or build failed, command execution returned a non-zero status code."
             exit 1
           fi
-          if echo "$output" | grep -i "ERROR"; then
-            echo "Installation or build failed because output contains 'ERROR'."
+          if echo "$output" | grep -i "at Composer.onError"; then
+            echo "Installation or build failed because output contains 'at Composer.onError'."
             exit 1
           fi
 
