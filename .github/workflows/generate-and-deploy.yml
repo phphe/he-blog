@@ -21,8 +21,11 @@ jobs:
 
       - name: Install and Build
         run: |
-          npm install || exit 1
-          npm run generate || exit 1
+          npm install && npm run generate
+          if [ $? -ne 0 ]; then
+            echo "Build failed. Stopped."
+            exit 1
+          fi
 
       - name: Extra Files
         run: |
