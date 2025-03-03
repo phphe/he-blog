@@ -9,7 +9,16 @@ layout: "@/layouts/MarkdownPageLayout.astro"
 
   Vue tree component. Features: Vue2, Vue3, TypeScript, SSR, nested, virtual list, draggable, sortable, placeholder for drag, table tree, based on Drag and Drop API, deal with any other code based on Drag and Drop API.
 
+- [he-tree-react](https://he-tree-react.phphe.com/): <span class="not-prose">![GitHub Repo stars](https://img.shields.io/github/stars/phphe/he-tree-react?style=social)</span>
+
+  React tree component. React version of he-tree.
+
 - [CMD Generator](https://cmdgenerator.phphe.com/): Generate terminal commands based on your selections.
+
+- [simple-audio-cutter-online
+](https://audio-cutter.phphe.com): <span class="not-prose">![GitHub Repo stars](https://img.shields.io/github/stars/phphe/simple-audio-cutter-online?style=social)</span>
+
+Cut your audio files in your browser locally.
 
 - [he-tree-vue](https://github.com/phphe/he-tree-vue): <span class="not-prose">![GitHub Repo stars](https://img.shields.io/github/stars/phphe/he-tree-vue?style=social)</span>
 

@@ -9,7 +9,16 @@ layout: "@/layouts/MarkdownPageLayout.astro"
 
   Vue 树组件. 特点: 支持 Vue2, Vue3, TypeScript, SSR, 嵌套, 虚拟列表, 可拖拽, 拖拽排序, 拖拽时使用占位节点表示可放置位置, 表格模式, 基于 Drag and Drop API, 可与其他基于 Drag and Drop API 的代码交互.
 
+- [he-tree-react](https://he-tree-react.phphe.com/): <span class="not-prose">![GitHub Repo stars](https://img.shields.io/github/stars/phphe/he-tree-react?style=social)</span>
+
+  React树组件。he-tree 的 React 版本。
+
 - [CMD Generator(命令生成器)](https://cmdgenerator.phphe.com/): 此工具可以根据输入的参数生成 linux 命令.
+
+- [simple-audio-cutter-online
+](https://audio-cutter.phphe.com): <span class="not-prose">![GitHub Repo stars](https://img.shields.io/github/stars/phphe/simple-audio-cutter-online?style=social)</span>
+
+在浏览器本地裁剪你的音频。
 
 - [he-tree-vue](https://github.com/phphe/he-tree-vue): <span class="not-prose">![GitHub Repo stars](https://img.shields.io/github/stars/phphe/he-tree-vue?style=social)</span>
 
