@@ -18,7 +18,7 @@ layout: "@/layouts/MarkdownPageLayout.astro"
 - [simple-audio-cutter-online
 ](https://audio-cutter.phphe.com): <span class="not-prose">![GitHub Repo stars](https://img.shields.io/github/stars/phphe/simple-audio-cutter-online?style=social)</span>
 
-在浏览器本地裁剪你的音频。
+  在浏览器本地裁剪你的音频。
 
 - [he-tree-vue](https://github.com/phphe/he-tree-vue): <span class="not-prose">![GitHub Repo stars](https://img.shields.io/github/stars/phphe/he-tree-vue?style=social)</span>
 
