@@ -1,28 +1,45 @@
 const appName = "He's Blog";
 const appDescription =
   "A blog about frontend development, JavaScript, Vue, React.";
+const appUrl = "https://phphe.com";
 
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
   devtools: { enabled: true },
 
   modules: [
+    "@nuxtjs/sitemap", // sitemap first
     "@nuxt/content",
     "@nuxtjs/tailwindcss",
     "@nuxtjs/i18n",
     "@nuxtjs/color-mode",
     "@nuxtjs/google-fonts",
     "nuxt-gtag",
-    "@nuxtjs/sitemap",
     "nuxt-disqus",
   ],
 
   i18n: {
-    vueI18n: "./i18n.config.ts",
-    locales: ["en", "zh"], // used in URL path prefix
+    // vueI18n: "./i18n.config.ts",
+    locales: [
+      {
+        code: "en",
+        name: "English",
+        language: "en-US",
+      },
+      {
+        code: "zh",
+        name: "简体中文",
+        language: "zh-CN",
+      },
+    ], // used in URL path prefix
     defaultLocale: "en", // default locale of your project for Nuxt pages and routings
     strategy: "prefix_except_default",
     detectBrowserLanguage: false,
+    baseUrl: appUrl,
+    // https://github.com/nuxt-modules/i18n/issues/3238#issuecomment-2672492536
+    bundle: {
+      optimizeTranslationDirective: false,
+    },
   },
 
   content: {
@@ -51,6 +68,7 @@ export default defineNuxtConfig({
         "yaml",
         // custom
         "python",
+        "tsx",
       ],
     },
   },
@@ -78,7 +96,7 @@ export default defineNuxtConfig({
   },
 
   site: {
-    url: "https://phphe.com",
+    url: appUrl,
     name: appName,
   },
 

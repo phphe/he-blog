@@ -1,3 +1,4 @@
+!!Deprecated
 #!/usr/bin/env sh
 # deploy to Github Page by push to gh-pages branch forcely
 # 强行覆盖gh-pages分支以部署到Github Page

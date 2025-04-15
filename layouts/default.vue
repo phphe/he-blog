@@ -87,12 +87,6 @@ import { mdiMenu, mdiClose, mdiWhiteBalanceSunny } from "@mdi/js";
 const runtimeConfig = useRuntimeConfig();
 const i18n = useI18n();
 
-useHead({
-  htmlAttrs: {
-    lang: i18n.locale,
-  },
-});
-
 const appName = runtimeConfig.public.appName;
 const sidebarVisible = ref(false);
 const year = new Date().getFullYear();
@@ -103,6 +97,16 @@ useHead({
     return !title || title === appName ? appName : `${title} - ${appName}`;
   },
 });
+
+// seo for locale
+const i18nHead = useLocaleHead();
+useHead(() => ({
+  htmlAttrs: {
+    lang: i18nHead.value.htmlAttrs!.lang,
+  },
+  link: [...(i18nHead.value.link || [])],
+  meta: [...(i18nHead.value.meta || [])],
+}));
 
 //
 const windowSize = ref({
