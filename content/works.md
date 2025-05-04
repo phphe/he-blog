@@ -13,12 +13,11 @@ layout: "@/layouts/MarkdownPageLayout.astro"
 
   React tree component. React version of he-tree.
 
-- [CMD Generator](https://cmdgenerator.phphe.com/): Generate terminal commands based on your selections.
+- [CMD Generator](https://cmdgenerator.org/): Generate terminal commands based on your selections.
 
-- [simple-audio-cutter-online
-](https://audio-cutter.phphe.com): <span class="not-prose">![GitHub Repo stars](https://img.shields.io/github/stars/phphe/simple-audio-cutter-online?style=social)</span>
+- [Local Tools](https://audio-cutter.phphe.com): <span class="not-prose">![GitHub Repo stars](https://img.shields.io/github/stars/phphe/local-tools?style=social)</span>
 
-  Cut your audio files in your browser locally.
+  Image processing toolbox based on browser API.
 
 - [he-tree-vue](https://github.com/phphe/he-tree-vue): <span class="not-prose">![GitHub Repo stars](https://img.shields.io/github/stars/phphe/he-tree-vue?style=social)</span>
 

@@ -11,14 +11,13 @@ layout: "@/layouts/MarkdownPageLayout.astro"
 
 - [he-tree-react](https://he-tree-react.phphe.com/): <span class="not-prose">![GitHub Repo stars](https://img.shields.io/github/stars/phphe/he-tree-react?style=social)</span>
 
-  React树组件。he-tree 的 React 版本。
+  React 树组件。he-tree 的 React 版本。
 
-- [CMD Generator(命令生成器)](https://cmdgenerator.phphe.com/): 此工具可以根据输入的参数生成 linux 命令.
+- [CMD Generator(命令生成器)](https://cmdgenerator.org/): 此工具可以根据输入的参数生成 linux 命令.
 
-- [simple-audio-cutter-online
-](https://audio-cutter.phphe.com): <span class="not-prose">![GitHub Repo stars](https://img.shields.io/github/stars/phphe/simple-audio-cutter-online?style=social)</span>
+- [Local Tools](https://audio-cutter.phphe.com): <span class="not-prose">![GitHub Repo stars](https://img.shields.io/github/stars/phphe/local-tools?style=social)</span>
 
-  在浏览器本地裁剪你的音频。
+  基于浏览器的图片处理工具箱。
 
 - [he-tree-vue](https://github.com/phphe/he-tree-vue): <span class="not-prose">![GitHub Repo stars](https://img.shields.io/github/stars/phphe/he-tree-vue?style=social)</span>
 
