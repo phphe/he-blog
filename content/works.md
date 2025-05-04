@@ -15,7 +15,7 @@ layout: "@/layouts/MarkdownPageLayout.astro"
 
 - [CMD Generator](https://cmdgenerator.org/): Generate terminal commands based on your selections.
 
-- [Local Tools](https://audio-cutter.phphe.com): <span class="not-prose">![GitHub Repo stars](https://img.shields.io/github/stars/phphe/local-tools?style=social)</span>
+- [Local Tools](https://local-tools.phphe.com/): <span class="not-prose">![GitHub Repo stars](https://img.shields.io/github/stars/phphe/local-tools?style=social)</span>
 
   Image processing toolbox based on browser API.
 

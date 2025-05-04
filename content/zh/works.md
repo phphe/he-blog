@@ -15,7 +15,7 @@ layout: "@/layouts/MarkdownPageLayout.astro"
 
 - [CMD Generator(命令生成器)](https://cmdgenerator.org/): 此工具可以根据输入的参数生成 linux 命令.
 
-- [Local Tools](https://audio-cutter.phphe.com): <span class="not-prose">![GitHub Repo stars](https://img.shields.io/github/stars/phphe/local-tools?style=social)</span>
+- [Local Tools](https://local-tools.phphe.com/): <span class="not-prose">![GitHub Repo stars](https://img.shields.io/github/stars/phphe/local-tools?style=social)</span>
 
   基于浏览器的图片处理工具箱。
 
