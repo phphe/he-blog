@@ -1,5 +1,5 @@
 <template>
-  <div class="default-layout fixed w-full h-full flex">
+  <div class="default-layout">
     <div
       v-if="sidebarVisible && !sm"
       @click="sidebarVisible = false"
@@ -7,9 +7,9 @@
     ></div>
     <Transition name="main-sidebar-slide-fade">
       <div
-        class="main-sidebar flex-shrink-0 w-72 h-full overflow-hidden font-title flex flex-col"
+        class="main-sidebar w-72 fixed h-full overflow-hidden font-title flex flex-col"
         :class="{ 'fixed z-10': sm }"
-        v-show="!sm || sidebarVisible"
+        v-show="sidebarVisibleActual"
       >
         <Icon
           :path="mdiClose"
@@ -48,7 +48,10 @@
         </div>
       </div>
     </Transition>
-    <div class="main-right flex-grow overflow-auto max-sm:pt-8">
+    <div
+      class="main-right max-sm:pt-8"
+      :class="{ 'ml-72': sidebarVisibleActual && !sm }"
+    >
       <div class="px-4 main-body">
         <slot />
       </div>
@@ -58,7 +61,7 @@
     </div>
     <div
       v-if="sm"
-      class="sm-top-menu flex justify-between fixed w-full top-0 left-0 px-4 py-3 border-b"
+      class="sm-top-menu flex justify-between fixed w-full top-0 left-0 px-4 py-3 border-b backdrop-blur"
     >
       <NuxtLinkLocale to="/">{{ appName }}</NuxtLinkLocale>
       <Icon
@@ -129,6 +132,7 @@ onUnmounted(() => {
 });
 
 const sm = computed(() => windowSize.value.width < 760);
+const sidebarVisibleActual = computed(() => !sm.value || sidebarVisible.value);
 
 // color mode
 const mapping = {
