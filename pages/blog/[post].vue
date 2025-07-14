@@ -18,7 +18,7 @@
 <style lang="scss">
 .page-blog-post {
   .prose {
-    max-width: 800px;
+    max-width: 900px;
   }
 }
 </style>

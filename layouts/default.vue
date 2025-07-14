@@ -156,8 +156,15 @@ const colorModeInfo = computed(() => {
 </script>
 
 <style lang="scss">
-.default-layout {
-  font-family: "Open Sans";
+body {
+  font-family: "Open Sans", "Noto Sans SC", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  font-size: 16px;
+  line-height: 1.6;
+  background: #fbfbfb;
+}
+
+.dark body {
+  background: inherit;
 }
 
 .main-sidebar {

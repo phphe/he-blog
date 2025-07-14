@@ -13,9 +13,8 @@ export default defineNuxtConfig({
     "@nuxtjs/tailwindcss",
     "@nuxtjs/i18n",
     "@nuxtjs/color-mode",
-    "@nuxtjs/google-fonts",
     "nuxt-gtag",
-    "nuxt-disqus",
+    '@nuxt/fonts',
   ],
 
   i18n: {
@@ -75,14 +74,6 @@ export default defineNuxtConfig({
 
   colorMode: {
     classSuffix: "", // no suffix, so color mode class will be `dark` or `light` in html tag
-  },
-
-  googleFonts: {
-    download: true,
-    families: {
-      Cairo: [400],
-      "Open+Sans": [300, 400, 500, 600, 700],
-    },
   },
 
   gtag: {
