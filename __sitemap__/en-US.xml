@@ -1,0 +1,451 @@
+<?xml version="1.0" encoding="UTF-8"?><?xml-stylesheet type="text/xsl" href="/__sitemap__/style.xsl"?>
+<urlset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:video="http://www.google.com/schemas/sitemap-video/1.1" xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1" xmlns:news="http://www.google.com/schemas/sitemap-news/0.9" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd http://www.google.com/schemas/sitemap-image/1.1 http://www.google.com/schemas/sitemap-image/1.1/sitemap-image.xsd" xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+    <url>
+        <loc>https://phphe.com/</loc>
+        <xhtml:link rel="alternate" hreflang="en-US" href="https://phphe.com/" />
+        <xhtml:link rel="alternate" hreflang="zh-CN" href="https://phphe.com/zh" />
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://phphe.com/" />
+        <xhtml:link rel="alternate" hreflang="zh" href="https://phphe.com/zh" />
+    </url>
+    <url>
+        <loc>https://phphe.com/about</loc>
+        <image:image>
+            <image:loc>https://img.shields.io/github/stars/phphe?style=social</image:loc>
+        </image:image>
+        <image:image>
+            <image:loc>https://img.shields.io/github/followers/phphe?style=social</image:loc>
+        </image:image>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://phphe.com/about" />
+        <xhtml:link rel="alternate" hreflang="en" href="https://phphe.com/about" />
+        <xhtml:link rel="alternate" hreflang="en-US" href="https://phphe.com/about" />
+        <xhtml:link rel="alternate" hreflang="zh" href="https://phphe.com/zh/about" />
+        <xhtml:link rel="alternate" hreflang="zh-CN" href="https://phphe.com/zh/about" />
+    </url>
+    <url>
+        <loc>https://phphe.com/works</loc>
+        <image:image>
+            <image:loc>https://img.shields.io/github/stars/phphe/he-tree?style=social</image:loc>
+        </image:image>
+        <image:image>
+            <image:loc>https://img.shields.io/github/stars/phphe/he-tree-react?style=social</image:loc>
+        </image:image>
+        <image:image>
+            <image:loc>https://img.shields.io/github/stars/phphe/local-tools?style=social</image:loc>
+        </image:image>
+        <image:image>
+            <image:loc>https://img.shields.io/github/stars/phphe/he-tree-vue?style=social</image:loc>
+        </image:image>
+        <image:image>
+            <image:loc>https://img.shields.io/github/stars/phphe/vue-draggable-nested-tree?style=social</image:loc>
+        </image:image>
+        <image:image>
+            <image:loc>https://img.shields.io/github/stars/phphe/virtual-list?style=social</image:loc>
+        </image:image>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://phphe.com/works" />
+        <xhtml:link rel="alternate" hreflang="en" href="https://phphe.com/works" />
+        <xhtml:link rel="alternate" hreflang="en-US" href="https://phphe.com/works" />
+        <xhtml:link rel="alternate" hreflang="zh" href="https://phphe.com/zh/works" />
+        <xhtml:link rel="alternate" hreflang="zh-CN" href="https://phphe.com/zh/works" />
+    </url>
+    <url>
+        <loc>https://phphe.com/blog/conventional-changelog-for-lerna-5-and-6</loc>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://phphe.com/blog/conventional-changelog-for-lerna-5-and-6" />
+        <xhtml:link rel="alternate" hreflang="en" href="https://phphe.com/blog/conventional-changelog-for-lerna-5-and-6" />
+        <xhtml:link rel="alternate" hreflang="en-US" href="https://phphe.com/blog/conventional-changelog-for-lerna-5-and-6" />
+        <xhtml:link rel="alternate" hreflang="zh" href="https://phphe.com/zh/blog/conventional-changelog-for-lerna-5-and-6" />
+        <xhtml:link rel="alternate" hreflang="zh-CN" href="https://phphe.com/zh/blog/conventional-changelog-for-lerna-5-and-6" />
+    </url>
+    <url>
+        <loc>https://phphe.com/blog/failed-to-resolve-entry</loc>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://phphe.com/blog/failed-to-resolve-entry" />
+        <xhtml:link rel="alternate" hreflang="en" href="https://phphe.com/blog/failed-to-resolve-entry" />
+        <xhtml:link rel="alternate" hreflang="en-US" href="https://phphe.com/blog/failed-to-resolve-entry" />
+        <xhtml:link rel="alternate" hreflang="zh" href="https://phphe.com/zh/blog/failed-to-resolve-entry" />
+        <xhtml:link rel="alternate" hreflang="zh-CN" href="https://phphe.com/zh/blog/failed-to-resolve-entry" />
+    </url>
+    <url>
+        <loc>https://phphe.com/blog/faq-chrome-ext</loc>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://phphe.com/blog/faq-chrome-ext" />
+        <xhtml:link rel="alternate" hreflang="en" href="https://phphe.com/blog/faq-chrome-ext" />
+        <xhtml:link rel="alternate" hreflang="en-US" href="https://phphe.com/blog/faq-chrome-ext" />
+        <xhtml:link rel="alternate" hreflang="zh" href="https://phphe.com/zh/blog/faq-chrome-ext" />
+        <xhtml:link rel="alternate" hreflang="zh-CN" href="https://phphe.com/zh/blog/faq-chrome-ext" />
+    </url>
+    <url>
+        <loc>https://phphe.com/blog/forwardref-generics</loc>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://phphe.com/blog/forwardref-generics" />
+        <xhtml:link rel="alternate" hreflang="en" href="https://phphe.com/blog/forwardref-generics" />
+        <xhtml:link rel="alternate" hreflang="en-US" href="https://phphe.com/blog/forwardref-generics" />
+        <xhtml:link rel="alternate" hreflang="zh" href="https://phphe.com/zh/blog/forwardref-generics" />
+        <xhtml:link rel="alternate" hreflang="zh-CN" href="https://phphe.com/zh/blog/forwardref-generics" />
+    </url>
+    <url>
+        <loc>https://phphe.com/blog/install-pytorch-manually</loc>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://phphe.com/blog/install-pytorch-manually" />
+        <xhtml:link rel="alternate" hreflang="en" href="https://phphe.com/blog/install-pytorch-manually" />
+        <xhtml:link rel="alternate" hreflang="en-US" href="https://phphe.com/blog/install-pytorch-manually" />
+        <xhtml:link rel="alternate" hreflang="zh" href="https://phphe.com/zh/blog/install-pytorch-manually" />
+        <xhtml:link rel="alternate" hreflang="zh-CN" href="https://phphe.com/zh/blog/install-pytorch-manually" />
+    </url>
+    <url>
+        <loc>https://phphe.com/blog/library-entries-and-type-moule</loc>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://phphe.com/blog/library-entries-and-type-moule" />
+        <xhtml:link rel="alternate" hreflang="en" href="https://phphe.com/blog/library-entries-and-type-moule" />
+        <xhtml:link rel="alternate" hreflang="en-US" href="https://phphe.com/blog/library-entries-and-type-moule" />
+        <xhtml:link rel="alternate" hreflang="zh" href="https://phphe.com/zh/blog/library-entries-and-type-moule" />
+        <xhtml:link rel="alternate" hreflang="zh-CN" href="https://phphe.com/zh/blog/library-entries-and-type-moule" />
+    </url>
+    <url>
+        <loc>https://phphe.com/blog/main-module-exports</loc>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://phphe.com/blog/main-module-exports" />
+        <xhtml:link rel="alternate" hreflang="en" href="https://phphe.com/blog/main-module-exports" />
+        <xhtml:link rel="alternate" hreflang="en-US" href="https://phphe.com/blog/main-module-exports" />
+        <xhtml:link rel="alternate" hreflang="zh" href="https://phphe.com/zh/blog/main-module-exports" />
+        <xhtml:link rel="alternate" hreflang="zh-CN" href="https://phphe.com/zh/blog/main-module-exports" />
+    </url>
+    <url>
+        <loc>https://phphe.com/blog/no-git-lfs</loc>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://phphe.com/blog/no-git-lfs" />
+        <xhtml:link rel="alternate" hreflang="en" href="https://phphe.com/blog/no-git-lfs" />
+        <xhtml:link rel="alternate" hreflang="en-US" href="https://phphe.com/blog/no-git-lfs" />
+        <xhtml:link rel="alternate" hreflang="zh" href="https://phphe.com/zh/blog/no-git-lfs" />
+        <xhtml:link rel="alternate" hreflang="zh-CN" href="https://phphe.com/zh/blog/no-git-lfs" />
+    </url>
+    <url>
+        <loc>https://phphe.com/blog/nuxt-content-order</loc>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://phphe.com/blog/nuxt-content-order" />
+        <xhtml:link rel="alternate" hreflang="en" href="https://phphe.com/blog/nuxt-content-order" />
+        <xhtml:link rel="alternate" hreflang="en-US" href="https://phphe.com/blog/nuxt-content-order" />
+        <xhtml:link rel="alternate" hreflang="zh" href="https://phphe.com/zh/blog/nuxt-content-order" />
+        <xhtml:link rel="alternate" hreflang="zh-CN" href="https://phphe.com/zh/blog/nuxt-content-order" />
+    </url>
+    <url>
+        <loc>https://phphe.com/blog/nuxt-generate-in-github-workflow</loc>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://phphe.com/blog/nuxt-generate-in-github-workflow" />
+        <xhtml:link rel="alternate" hreflang="en" href="https://phphe.com/blog/nuxt-generate-in-github-workflow" />
+        <xhtml:link rel="alternate" hreflang="en-US" href="https://phphe.com/blog/nuxt-generate-in-github-workflow" />
+        <xhtml:link rel="alternate" hreflang="zh" href="https://phphe.com/zh/blog/nuxt-generate-in-github-workflow" />
+        <xhtml:link rel="alternate" hreflang="zh-CN" href="https://phphe.com/zh/blog/nuxt-generate-in-github-workflow" />
+    </url>
+    <url>
+        <loc>https://phphe.com/blog/nuxt-i18n-head</loc>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://phphe.com/blog/nuxt-i18n-head" />
+        <xhtml:link rel="alternate" hreflang="en" href="https://phphe.com/blog/nuxt-i18n-head" />
+        <xhtml:link rel="alternate" hreflang="en-US" href="https://phphe.com/blog/nuxt-i18n-head" />
+        <xhtml:link rel="alternate" hreflang="zh" href="https://phphe.com/zh/blog/nuxt-i18n-head" />
+        <xhtml:link rel="alternate" hreflang="zh-CN" href="https://phphe.com/zh/blog/nuxt-i18n-head" />
+    </url>
+    <url>
+        <loc>https://phphe.com/blog/nuxt-prisma</loc>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://phphe.com/blog/nuxt-prisma" />
+        <xhtml:link rel="alternate" hreflang="en" href="https://phphe.com/blog/nuxt-prisma" />
+        <xhtml:link rel="alternate" hreflang="en-US" href="https://phphe.com/blog/nuxt-prisma" />
+        <xhtml:link rel="alternate" hreflang="zh" href="https://phphe.com/zh/blog/nuxt-prisma" />
+        <xhtml:link rel="alternate" hreflang="zh-CN" href="https://phphe.com/zh/blog/nuxt-prisma" />
+    </url>
+    <url>
+        <loc>https://phphe.com/blog/nuxt-watch-dom</loc>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://phphe.com/blog/nuxt-watch-dom" />
+        <xhtml:link rel="alternate" hreflang="en" href="https://phphe.com/blog/nuxt-watch-dom" />
+        <xhtml:link rel="alternate" hreflang="en-US" href="https://phphe.com/blog/nuxt-watch-dom" />
+        <xhtml:link rel="alternate" hreflang="zh" href="https://phphe.com/zh/blog/nuxt-watch-dom" />
+        <xhtml:link rel="alternate" hreflang="zh-CN" href="https://phphe.com/zh/blog/nuxt-watch-dom" />
+    </url>
+    <url>
+        <loc>https://phphe.com/blog/nuxt3-i18n-setup</loc>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://phphe.com/blog/nuxt3-i18n-setup" />
+        <xhtml:link rel="alternate" hreflang="en" href="https://phphe.com/blog/nuxt3-i18n-setup" />
+        <xhtml:link rel="alternate" hreflang="en-US" href="https://phphe.com/blog/nuxt3-i18n-setup" />
+        <xhtml:link rel="alternate" hreflang="zh" href="https://phphe.com/zh/blog/nuxt3-i18n-setup" />
+        <xhtml:link rel="alternate" hreflang="zh-CN" href="https://phphe.com/zh/blog/nuxt3-i18n-setup" />
+    </url>
+    <url>
+        <loc>https://phphe.com/blog/nuxt3-i18n9</loc>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://phphe.com/blog/nuxt3-i18n9" />
+        <xhtml:link rel="alternate" hreflang="en" href="https://phphe.com/blog/nuxt3-i18n9" />
+        <xhtml:link rel="alternate" hreflang="en-US" href="https://phphe.com/blog/nuxt3-i18n9" />
+        <xhtml:link rel="alternate" hreflang="zh" href="https://phphe.com/zh/blog/nuxt3-i18n9" />
+        <xhtml:link rel="alternate" hreflang="zh-CN" href="https://phphe.com/zh/blog/nuxt3-i18n9" />
+    </url>
+    <url>
+        <loc>https://phphe.com/blog/oxc-parser-error</loc>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://phphe.com/blog/oxc-parser-error" />
+        <xhtml:link rel="alternate" hreflang="en" href="https://phphe.com/blog/oxc-parser-error" />
+        <xhtml:link rel="alternate" hreflang="en-US" href="https://phphe.com/blog/oxc-parser-error" />
+        <xhtml:link rel="alternate" hreflang="zh" href="https://phphe.com/zh/blog/oxc-parser-error" />
+        <xhtml:link rel="alternate" hreflang="zh-CN" href="https://phphe.com/zh/blog/oxc-parser-error" />
+    </url>
+    <url>
+        <loc>https://phphe.com/blog/prisma-client-error-copy</loc>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://phphe.com/blog/prisma-client-error-copy" />
+        <xhtml:link rel="alternate" hreflang="en" href="https://phphe.com/blog/prisma-client-error-copy" />
+        <xhtml:link rel="alternate" hreflang="en-US" href="https://phphe.com/blog/prisma-client-error-copy" />
+        <xhtml:link rel="alternate" hreflang="zh" href="https://phphe.com/zh/blog/prisma-client-error-copy" />
+        <xhtml:link rel="alternate" hreflang="zh-CN" href="https://phphe.com/zh/blog/prisma-client-error-copy" />
+    </url>
+    <url>
+        <loc>https://phphe.com/blog/use-echarts-directly</loc>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://phphe.com/blog/use-echarts-directly" />
+        <xhtml:link rel="alternate" hreflang="en" href="https://phphe.com/blog/use-echarts-directly" />
+        <xhtml:link rel="alternate" hreflang="en-US" href="https://phphe.com/blog/use-echarts-directly" />
+        <xhtml:link rel="alternate" hreflang="zh" href="https://phphe.com/zh/blog/use-echarts-directly" />
+        <xhtml:link rel="alternate" hreflang="zh-CN" href="https://phphe.com/zh/blog/use-echarts-directly" />
+    </url>
+    <url>
+        <loc>https://phphe.com/blog/vsvode-mouse-lost</loc>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://phphe.com/blog/vsvode-mouse-lost" />
+        <xhtml:link rel="alternate" hreflang="en" href="https://phphe.com/blog/vsvode-mouse-lost" />
+        <xhtml:link rel="alternate" hreflang="en-US" href="https://phphe.com/blog/vsvode-mouse-lost" />
+        <xhtml:link rel="alternate" hreflang="zh" href="https://phphe.com/zh/blog/vsvode-mouse-lost" />
+        <xhtml:link rel="alternate" hreflang="zh-CN" href="https://phphe.com/zh/blog/vsvode-mouse-lost" />
+    </url>
+    <url>
+        <loc>https://phphe.com/blog/vue-update-background-style-inside-a-component</loc>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://phphe.com/blog/vue-update-background-style-inside-a-component" />
+        <xhtml:link rel="alternate" hreflang="en" href="https://phphe.com/blog/vue-update-background-style-inside-a-component" />
+        <xhtml:link rel="alternate" hreflang="en-US" href="https://phphe.com/blog/vue-update-background-style-inside-a-component" />
+        <xhtml:link rel="alternate" hreflang="zh" href="https://phphe.com/zh/blog/vue-update-background-style-inside-a-component" />
+        <xhtml:link rel="alternate" hreflang="zh-CN" href="https://phphe.com/zh/blog/vue-update-background-style-inside-a-component" />
+    </url>
+    <url>
+        <loc>https://phphe.com/blog/vue3-echarts</loc>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://phphe.com/blog/vue3-echarts" />
+        <xhtml:link rel="alternate" hreflang="en" href="https://phphe.com/blog/vue3-echarts" />
+        <xhtml:link rel="alternate" hreflang="en-US" href="https://phphe.com/blog/vue3-echarts" />
+        <xhtml:link rel="alternate" hreflang="zh" href="https://phphe.com/zh/blog/vue3-echarts" />
+        <xhtml:link rel="alternate" hreflang="zh-CN" href="https://phphe.com/zh/blog/vue3-echarts" />
+    </url>
+    <url>
+        <loc>https://phphe.com/blog/vue3-meta-simple-solution</loc>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://phphe.com/blog/vue3-meta-simple-solution" />
+        <xhtml:link rel="alternate" hreflang="en" href="https://phphe.com/blog/vue3-meta-simple-solution" />
+        <xhtml:link rel="alternate" hreflang="en-US" href="https://phphe.com/blog/vue3-meta-simple-solution" />
+        <xhtml:link rel="alternate" hreflang="zh" href="https://phphe.com/zh/blog/vue3-meta-simple-solution" />
+        <xhtml:link rel="alternate" hreflang="zh-CN" href="https://phphe.com/zh/blog/vue3-meta-simple-solution" />
+    </url>
+    <url>
+        <loc>https://phphe.com/blog/vue3-refresh-router-view</loc>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://phphe.com/blog/vue3-refresh-router-view" />
+        <xhtml:link rel="alternate" hreflang="en" href="https://phphe.com/blog/vue3-refresh-router-view" />
+        <xhtml:link rel="alternate" hreflang="en-US" href="https://phphe.com/blog/vue3-refresh-router-view" />
+        <xhtml:link rel="alternate" hreflang="zh" href="https://phphe.com/zh/blog/vue3-refresh-router-view" />
+        <xhtml:link rel="alternate" hreflang="zh-CN" href="https://phphe.com/zh/blog/vue3-refresh-router-view" />
+    </url>
+    <url>
+        <loc>https://phphe.com/blog/webui-always-loading</loc>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://phphe.com/blog/webui-always-loading" />
+        <xhtml:link rel="alternate" hreflang="en" href="https://phphe.com/blog/webui-always-loading" />
+        <xhtml:link rel="alternate" hreflang="en-US" href="https://phphe.com/blog/webui-always-loading" />
+        <xhtml:link rel="alternate" hreflang="zh" href="https://phphe.com/zh/blog/webui-always-loading" />
+        <xhtml:link rel="alternate" hreflang="zh-CN" href="https://phphe.com/zh/blog/webui-always-loading" />
+    </url>
+    <url>
+        <loc>https://phphe.com/blog/tag/ai</loc>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://phphe.com/blog/tag/ai" />
+        <xhtml:link rel="alternate" hreflang="en" href="https://phphe.com/blog/tag/ai" />
+        <xhtml:link rel="alternate" hreflang="en-US" href="https://phphe.com/blog/tag/ai" />
+        <xhtml:link rel="alternate" hreflang="zh" href="https://phphe.com/zh/blog/tag/ai" />
+        <xhtml:link rel="alternate" hreflang="zh-CN" href="https://phphe.com/zh/blog/tag/ai" />
+    </url>
+    <url>
+        <loc>https://phphe.com/blog/tag/bug</loc>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://phphe.com/blog/tag/bug" />
+        <xhtml:link rel="alternate" hreflang="en" href="https://phphe.com/blog/tag/bug" />
+        <xhtml:link rel="alternate" hreflang="en-US" href="https://phphe.com/blog/tag/bug" />
+        <xhtml:link rel="alternate" hreflang="zh" href="https://phphe.com/zh/blog/tag/bug" />
+        <xhtml:link rel="alternate" hreflang="zh-CN" href="https://phphe.com/zh/blog/tag/bug" />
+    </url>
+    <url>
+        <loc>https://phphe.com/blog/tag/chrome</loc>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://phphe.com/blog/tag/chrome" />
+        <xhtml:link rel="alternate" hreflang="en" href="https://phphe.com/blog/tag/chrome" />
+        <xhtml:link rel="alternate" hreflang="en-US" href="https://phphe.com/blog/tag/chrome" />
+        <xhtml:link rel="alternate" hreflang="zh" href="https://phphe.com/zh/blog/tag/chrome" />
+        <xhtml:link rel="alternate" hreflang="zh-CN" href="https://phphe.com/zh/blog/tag/chrome" />
+    </url>
+    <url>
+        <loc>https://phphe.com/blog/tag/comfyui</loc>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://phphe.com/blog/tag/comfyui" />
+        <xhtml:link rel="alternate" hreflang="en" href="https://phphe.com/blog/tag/comfyui" />
+        <xhtml:link rel="alternate" hreflang="en-US" href="https://phphe.com/blog/tag/comfyui" />
+        <xhtml:link rel="alternate" hreflang="zh" href="https://phphe.com/zh/blog/tag/comfyui" />
+        <xhtml:link rel="alternate" hreflang="zh-CN" href="https://phphe.com/zh/blog/tag/comfyui" />
+    </url>
+    <url>
+        <loc>https://phphe.com/blog/tag/echarts</loc>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://phphe.com/blog/tag/echarts" />
+        <xhtml:link rel="alternate" hreflang="en" href="https://phphe.com/blog/tag/echarts" />
+        <xhtml:link rel="alternate" hreflang="en-US" href="https://phphe.com/blog/tag/echarts" />
+        <xhtml:link rel="alternate" hreflang="zh" href="https://phphe.com/zh/blog/tag/echarts" />
+        <xhtml:link rel="alternate" hreflang="zh-CN" href="https://phphe.com/zh/blog/tag/echarts" />
+    </url>
+    <url>
+        <loc>https://phphe.com/blog/tag/extension</loc>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://phphe.com/blog/tag/extension" />
+        <xhtml:link rel="alternate" hreflang="en" href="https://phphe.com/blog/tag/extension" />
+        <xhtml:link rel="alternate" hreflang="en-US" href="https://phphe.com/blog/tag/extension" />
+        <xhtml:link rel="alternate" hreflang="zh" href="https://phphe.com/zh/blog/tag/extension" />
+        <xhtml:link rel="alternate" hreflang="zh-CN" href="https://phphe.com/zh/blog/tag/extension" />
+    </url>
+    <url>
+        <loc>https://phphe.com/blog/tag/frontend</loc>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://phphe.com/blog/tag/frontend" />
+        <xhtml:link rel="alternate" hreflang="en" href="https://phphe.com/blog/tag/frontend" />
+        <xhtml:link rel="alternate" hreflang="en-US" href="https://phphe.com/blog/tag/frontend" />
+        <xhtml:link rel="alternate" hreflang="zh" href="https://phphe.com/zh/blog/tag/frontend" />
+        <xhtml:link rel="alternate" hreflang="zh-CN" href="https://phphe.com/zh/blog/tag/frontend" />
+    </url>
+    <url>
+        <loc>https://phphe.com/blog/tag/git</loc>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://phphe.com/blog/tag/git" />
+        <xhtml:link rel="alternate" hreflang="en" href="https://phphe.com/blog/tag/git" />
+        <xhtml:link rel="alternate" hreflang="en-US" href="https://phphe.com/blog/tag/git" />
+        <xhtml:link rel="alternate" hreflang="zh" href="https://phphe.com/zh/blog/tag/git" />
+        <xhtml:link rel="alternate" hreflang="zh-CN" href="https://phphe.com/zh/blog/tag/git" />
+    </url>
+    <url>
+        <loc>https://phphe.com/blog/tag/git-lfs</loc>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://phphe.com/blog/tag/git-lfs" />
+        <xhtml:link rel="alternate" hreflang="en" href="https://phphe.com/blog/tag/git-lfs" />
+        <xhtml:link rel="alternate" hreflang="en-US" href="https://phphe.com/blog/tag/git-lfs" />
+        <xhtml:link rel="alternate" hreflang="zh" href="https://phphe.com/zh/blog/tag/git-lfs" />
+        <xhtml:link rel="alternate" hreflang="zh-CN" href="https://phphe.com/zh/blog/tag/git-lfs" />
+    </url>
+    <url>
+        <loc>https://phphe.com/blog/tag/javascript</loc>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://phphe.com/blog/tag/javascript" />
+        <xhtml:link rel="alternate" hreflang="en" href="https://phphe.com/blog/tag/javascript" />
+        <xhtml:link rel="alternate" hreflang="en-US" href="https://phphe.com/blog/tag/javascript" />
+        <xhtml:link rel="alternate" hreflang="zh" href="https://phphe.com/zh/blog/tag/javascript" />
+        <xhtml:link rel="alternate" hreflang="zh-CN" href="https://phphe.com/zh/blog/tag/javascript" />
+    </url>
+    <url>
+        <loc>https://phphe.com/blog/tag/lerna</loc>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://phphe.com/blog/tag/lerna" />
+        <xhtml:link rel="alternate" hreflang="en" href="https://phphe.com/blog/tag/lerna" />
+        <xhtml:link rel="alternate" hreflang="en-US" href="https://phphe.com/blog/tag/lerna" />
+        <xhtml:link rel="alternate" hreflang="zh" href="https://phphe.com/zh/blog/tag/lerna" />
+        <xhtml:link rel="alternate" hreflang="zh-CN" href="https://phphe.com/zh/blog/tag/lerna" />
+    </url>
+    <url>
+        <loc>https://phphe.com/blog/tag/library</loc>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://phphe.com/blog/tag/library" />
+        <xhtml:link rel="alternate" hreflang="en" href="https://phphe.com/blog/tag/library" />
+        <xhtml:link rel="alternate" hreflang="en-US" href="https://phphe.com/blog/tag/library" />
+        <xhtml:link rel="alternate" hreflang="zh" href="https://phphe.com/zh/blog/tag/library" />
+        <xhtml:link rel="alternate" hreflang="zh-CN" href="https://phphe.com/zh/blog/tag/library" />
+    </url>
+    <url>
+        <loc>https://phphe.com/blog/tag/module-system</loc>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://phphe.com/blog/tag/module-system" />
+        <xhtml:link rel="alternate" hreflang="en" href="https://phphe.com/blog/tag/module-system" />
+        <xhtml:link rel="alternate" hreflang="en-US" href="https://phphe.com/blog/tag/module-system" />
+        <xhtml:link rel="alternate" hreflang="zh" href="https://phphe.com/zh/blog/tag/module-system" />
+        <xhtml:link rel="alternate" hreflang="zh-CN" href="https://phphe.com/zh/blog/tag/module-system" />
+    </url>
+    <url>
+        <loc>https://phphe.com/blog/tag/nodejs</loc>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://phphe.com/blog/tag/nodejs" />
+        <xhtml:link rel="alternate" hreflang="en" href="https://phphe.com/blog/tag/nodejs" />
+        <xhtml:link rel="alternate" hreflang="en-US" href="https://phphe.com/blog/tag/nodejs" />
+        <xhtml:link rel="alternate" hreflang="zh" href="https://phphe.com/zh/blog/tag/nodejs" />
+        <xhtml:link rel="alternate" hreflang="zh-CN" href="https://phphe.com/zh/blog/tag/nodejs" />
+    </url>
+    <url>
+        <loc>https://phphe.com/blog/tag/npm</loc>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://phphe.com/blog/tag/npm" />
+        <xhtml:link rel="alternate" hreflang="en" href="https://phphe.com/blog/tag/npm" />
+        <xhtml:link rel="alternate" hreflang="en-US" href="https://phphe.com/blog/tag/npm" />
+        <xhtml:link rel="alternate" hreflang="zh" href="https://phphe.com/zh/blog/tag/npm" />
+        <xhtml:link rel="alternate" hreflang="zh-CN" href="https://phphe.com/zh/blog/tag/npm" />
+    </url>
+    <url>
+        <loc>https://phphe.com/blog/tag/nuxt</loc>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://phphe.com/blog/tag/nuxt" />
+        <xhtml:link rel="alternate" hreflang="en" href="https://phphe.com/blog/tag/nuxt" />
+        <xhtml:link rel="alternate" hreflang="en-US" href="https://phphe.com/blog/tag/nuxt" />
+        <xhtml:link rel="alternate" hreflang="zh" href="https://phphe.com/zh/blog/tag/nuxt" />
+        <xhtml:link rel="alternate" hreflang="zh-CN" href="https://phphe.com/zh/blog/tag/nuxt" />
+    </url>
+    <url>
+        <loc>https://phphe.com/blog/tag/pnpm</loc>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://phphe.com/blog/tag/pnpm" />
+        <xhtml:link rel="alternate" hreflang="en" href="https://phphe.com/blog/tag/pnpm" />
+        <xhtml:link rel="alternate" hreflang="en-US" href="https://phphe.com/blog/tag/pnpm" />
+        <xhtml:link rel="alternate" hreflang="zh" href="https://phphe.com/zh/blog/tag/pnpm" />
+        <xhtml:link rel="alternate" hreflang="zh-CN" href="https://phphe.com/zh/blog/tag/pnpm" />
+    </url>
+    <url>
+        <loc>https://phphe.com/blog/tag/prisma</loc>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://phphe.com/blog/tag/prisma" />
+        <xhtml:link rel="alternate" hreflang="en" href="https://phphe.com/blog/tag/prisma" />
+        <xhtml:link rel="alternate" hreflang="en-US" href="https://phphe.com/blog/tag/prisma" />
+        <xhtml:link rel="alternate" hreflang="zh" href="https://phphe.com/zh/blog/tag/prisma" />
+        <xhtml:link rel="alternate" hreflang="zh-CN" href="https://phphe.com/zh/blog/tag/prisma" />
+    </url>
+    <url>
+        <loc>https://phphe.com/blog/tag/python</loc>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://phphe.com/blog/tag/python" />
+        <xhtml:link rel="alternate" hreflang="en" href="https://phphe.com/blog/tag/python" />
+        <xhtml:link rel="alternate" hreflang="en-US" href="https://phphe.com/blog/tag/python" />
+        <xhtml:link rel="alternate" hreflang="zh" href="https://phphe.com/zh/blog/tag/python" />
+        <xhtml:link rel="alternate" hreflang="zh-CN" href="https://phphe.com/zh/blog/tag/python" />
+    </url>
+    <url>
+        <loc>https://phphe.com/blog/tag/react</loc>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://phphe.com/blog/tag/react" />
+        <xhtml:link rel="alternate" hreflang="en" href="https://phphe.com/blog/tag/react" />
+        <xhtml:link rel="alternate" hreflang="en-US" href="https://phphe.com/blog/tag/react" />
+        <xhtml:link rel="alternate" hreflang="zh" href="https://phphe.com/zh/blog/tag/react" />
+        <xhtml:link rel="alternate" hreflang="zh-CN" href="https://phphe.com/zh/blog/tag/react" />
+    </url>
+    <url>
+        <loc>https://phphe.com/blog/tag/tool</loc>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://phphe.com/blog/tag/tool" />
+        <xhtml:link rel="alternate" hreflang="en" href="https://phphe.com/blog/tag/tool" />
+        <xhtml:link rel="alternate" hreflang="en-US" href="https://phphe.com/blog/tag/tool" />
+        <xhtml:link rel="alternate" hreflang="zh" href="https://phphe.com/zh/blog/tag/tool" />
+        <xhtml:link rel="alternate" hreflang="zh-CN" href="https://phphe.com/zh/blog/tag/tool" />
+    </url>
+    <url>
+        <loc>https://phphe.com/blog/tag/typescript</loc>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://phphe.com/blog/tag/typescript" />
+        <xhtml:link rel="alternate" hreflang="en" href="https://phphe.com/blog/tag/typescript" />
+        <xhtml:link rel="alternate" hreflang="en-US" href="https://phphe.com/blog/tag/typescript" />
+        <xhtml:link rel="alternate" hreflang="zh" href="https://phphe.com/zh/blog/tag/typescript" />
+        <xhtml:link rel="alternate" hreflang="zh-CN" href="https://phphe.com/zh/blog/tag/typescript" />
+    </url>
+    <url>
+        <loc>https://phphe.com/blog/tag/vite</loc>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://phphe.com/blog/tag/vite" />
+        <xhtml:link rel="alternate" hreflang="en" href="https://phphe.com/blog/tag/vite" />
+        <xhtml:link rel="alternate" hreflang="en-US" href="https://phphe.com/blog/tag/vite" />
+        <xhtml:link rel="alternate" hreflang="zh" href="https://phphe.com/zh/blog/tag/vite" />
+        <xhtml:link rel="alternate" hreflang="zh-CN" href="https://phphe.com/zh/blog/tag/vite" />
+    </url>
+    <url>
+        <loc>https://phphe.com/blog/tag/vscode</loc>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://phphe.com/blog/tag/vscode" />
+        <xhtml:link rel="alternate" hreflang="en" href="https://phphe.com/blog/tag/vscode" />
+        <xhtml:link rel="alternate" hreflang="en-US" href="https://phphe.com/blog/tag/vscode" />
+        <xhtml:link rel="alternate" hreflang="zh" href="https://phphe.com/zh/blog/tag/vscode" />
+        <xhtml:link rel="alternate" hreflang="zh-CN" href="https://phphe.com/zh/blog/tag/vscode" />
+    </url>
+    <url>
+        <loc>https://phphe.com/blog/tag/vue</loc>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://phphe.com/blog/tag/vue" />
+        <xhtml:link rel="alternate" hreflang="en" href="https://phphe.com/blog/tag/vue" />
+        <xhtml:link rel="alternate" hreflang="en-US" href="https://phphe.com/blog/tag/vue" />
+        <xhtml:link rel="alternate" hreflang="zh" href="https://phphe.com/zh/blog/tag/vue" />
+        <xhtml:link rel="alternate" hreflang="zh-CN" href="https://phphe.com/zh/blog/tag/vue" />
+    </url>
+    <url>
+        <loc>https://phphe.com/blog/tag/workflow</loc>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://phphe.com/blog/tag/workflow" />
+        <xhtml:link rel="alternate" hreflang="en" href="https://phphe.com/blog/tag/workflow" />
+        <xhtml:link rel="alternate" hreflang="en-US" href="https://phphe.com/blog/tag/workflow" />
+        <xhtml:link rel="alternate" hreflang="zh" href="https://phphe.com/zh/blog/tag/workflow" />
+        <xhtml:link rel="alternate" hreflang="zh-CN" href="https://phphe.com/zh/blog/tag/workflow" />
+    </url>
+</urlset>
+<!-- XML Sitemap generated by @nuxtjs/sitemap v7.4.7 at 2025-10-10T11:27:16.685Z -->
