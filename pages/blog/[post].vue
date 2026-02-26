@@ -7,6 +7,9 @@
         <!-- <div class="post-comments mt-10">
           <DisqusComments :identifier="$route.path" />
         </div> -->
+        <div class="post-comments mt-10">
+          <GiscusComment :identifier="$route.path" />
+        </div>
       </template>
       <template #not-found>
         <p class="text-xl">{{ $t("notFound") }}</p>

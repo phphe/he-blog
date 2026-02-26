@@ -2,6 +2,9 @@ const appName = "He's Blog";
 const appDescription =
   "A blog about frontend development, JavaScript, Vue, React.";
 const appUrl = "https://phphe.com";
+const appRepo = "phphe/he-blog";
+const giscusRepoId = "MDEwOlJlcG9zaXRvcnkyNDU2NzY4OTk";
+const giscusCategoryId = "DIC_kwDODqS7Y84C3PIk";
 
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
@@ -81,11 +84,6 @@ export default defineNuxtConfig({
     enabled: process.env.NODE_ENV === "production",
   },
 
-  // @ts-ignore
-  disqus: {
-    shortname: "hes-blog-1",
-  },
-
   site: {
     url: appUrl,
     name: appName,
@@ -95,6 +93,9 @@ export default defineNuxtConfig({
     public: {
       appName,
       appDescription,
+      appRepo,
+      giscusRepoId,
+      giscusCategoryId,
     },
   },
 

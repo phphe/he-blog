@@ -24,6 +24,7 @@
     "sass-embedded": "^1.86.0"
   },
   "dependencies": {
+    "@giscus/vue": "^3.1.1",
     "@nuxt/fonts": "^0.11.4"
   },
   "packageManager": "pnpm@10.30.2"
