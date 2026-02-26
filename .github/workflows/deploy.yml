@@ -1,0 +1,31 @@
+name: Generate and Deploy to Github Pages
+on:
+  push:
+    branches:
+      - nuxt
+
+permissions:
+  contents: write
+  pages: write # 必须：部署 Pages 需要
+  deployments: write
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: pnpm/action-setup@v3
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "24"
+          cache: "pnpm"
+      - run: pnpm install --frozen-lockfile
+      - name: Build
+        run: pnpm generate
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: ".output/public"
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
