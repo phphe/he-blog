@@ -6,6 +6,7 @@ on:
 
 permissions:
   contents: write
+  id-token: write # 必须
   pages: write # 必须：部署 Pages 需要
   deployments: write
 
