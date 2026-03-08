@@ -1,9 +1,9 @@
 <template>
- <div class="giscus-container">
+  <div class="giscus-container">
     <ClientOnly>
       <Giscus v-if="identifier" :key="identifier" id="comments" :repo="config.public.appRepo"
         :repoId="config.public.giscusRepoId" category="Announcements" :categoryId="config.public.giscusCategoryId"
-        mapping="specific" :term="identifier" strict="0" reactionsEnabled="1" emitMetadata="0" inputPosition="top"
+        mapping="specific" :term="identifier" strict="1" reactionsEnabled="1" emitMetadata="0" inputPosition="top"
         :theme="giscusTheme" :lang="giscusLang" loading="lazy" crossorigin="anonymous" />
     </ClientOnly>
   </div>
@@ -11,6 +11,8 @@
 
 <script setup>
 import Giscus from '@giscus/vue';
+// mapping="specific" :term="identifier" strict="1"
+// mapping="specific": 按给定字符搜索标题（部分匹配）; term: 标识字符串; strict="1": 严格匹配（完全匹配）
 
 const props = defineProps({
   identifier: {
