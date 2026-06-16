@@ -8,7 +8,7 @@
           <DisqusComments :identifier="$route.path" />
         </div> -->
         <div class="post-comments mt-10">
-          <GiscusComment :identifier="$route.path" />
+          <GiscusComment :identifier="$route.path.replace(/\/$/, '')" />
         </div>
       </template>
       <template #not-found>
